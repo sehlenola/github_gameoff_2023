@@ -21,7 +21,8 @@ public class ShotgunFireStrategy : IProjectileFireStrategy
         {
             float angle = SpreadAngle * (i / (float)(PelletsCount - 1) - 0.5f);
             Quaternion spreadRotation = Quaternion.Euler(0, angle, 0);
-            projectileFactory.CreateProjectile(projectilePrefab, position, rotation * spreadRotation);
+            //projectileFactory.CreateProjectile(projectilePrefab, position, rotation * spreadRotation);
+            ObjectPoolManager.SpawnObject(projectilePrefab, position, rotation * spreadRotation, ObjectPoolManager.PoolType.Gameobject);
             // Additional setup...
         }
     }

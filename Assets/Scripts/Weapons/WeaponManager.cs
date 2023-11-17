@@ -10,14 +10,16 @@ public class WeaponManager : MonoBehaviour
     private List<IWeapon> allWeapons = new List<IWeapon>();
     private int currentWeaponIndex = 0;
 
+    [SerializeField] List<WeaponData> weapons = new List<WeaponData>();
+
 
     void Start()
     {
         // Create a ProjectileFactory instance
         factory = new ProjectileFactory();
 
-        IWeapon machineGunWeapon = new WeaponMachineGun(factory, projectilePrefab, firePoint);
-        IWeapon shotgunWeapon = new WeaponShotgun(factory, projectilePrefab, firePoint);
+        IWeapon machineGunWeapon = new WeaponMachineGun(factory, projectilePrefab, firePoint, weapons[0]);
+        IWeapon shotgunWeapon = new WeaponShotgun(factory, projectilePrefab, firePoint, weapons[1]);
 
         allWeapons.Add(machineGunWeapon);
         allWeapons.Add(shotgunWeapon);

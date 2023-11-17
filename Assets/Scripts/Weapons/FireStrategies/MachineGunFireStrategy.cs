@@ -28,7 +28,9 @@ public class MachineGunFireStrategy : IProjectileFireStrategy
                 spreadRotation = Quaternion.Euler(0, angle, 0);
             }
 
-            projectileFactory.CreateProjectile(projectilePrefab, spawnPosition, rotation * spreadRotation);
+            //projectileFactory.CreateProjectile(projectilePrefab, spawnPosition, rotation * spreadRotation);
+            ObjectPoolManager.SpawnObject(projectilePrefab, spawnPosition, rotation * spreadRotation, ObjectPoolManager.PoolType.Gameobject);
+            
         }
     }
 }
