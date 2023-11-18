@@ -6,6 +6,7 @@ public class ForwardFireStrategy : FireStrategy
 {
     public float spreadAngle;
     public float fireOffset;
+    private float lastDamageValue = 0f;
     public override void Fire(Transform firePoint, WeaponData weaponData)
     {
         for (int i = 0; i < weaponData.pelletCount; i++)
@@ -23,7 +24,11 @@ public class ForwardFireStrategy : FireStrategy
             }
 
             //projectileFactory.CreateProjectile(projectilePrefab, spawnPosition, rotation * spreadRotation);
-            ObjectPoolManager.SpawnObject(weaponData.projectile, spawnPosition, firePoint.transform.rotation * spreadRotation, ObjectPoolManager.PoolType.Gameobject);
+            GameObject go = ObjectPoolManager.SpawnObject(weaponData.projectile, spawnPosition, firePoint.transform.rotation * spreadRotation, ObjectPoolManager.PoolType.Gameobject);
+            //check if weapon damage has changed since last spawning of a projectile
+
+            go.GetComponent<Projectile>().SetDamage(weaponData.weaponDamage);
+
         }
     }
 }

@@ -25,13 +25,6 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        /*lifeTime -= Time.deltaTime;
-        if(lifeTime < 0)
-        {
-            //Destroy(gameObject);
-            ObjectPoolManager.ReturnObjectToPool(gameObject);
-        }
-        */
     }
 
     public void SetDamage(float damage)
