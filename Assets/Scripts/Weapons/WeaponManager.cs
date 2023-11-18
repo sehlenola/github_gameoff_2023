@@ -7,7 +7,6 @@ public class WeaponManager : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public GameObject weaponHolder;
-    private IWeapon currentWeapon;
 
     private List<Weapon> allNewWeapons = new List<Weapon>();
 
