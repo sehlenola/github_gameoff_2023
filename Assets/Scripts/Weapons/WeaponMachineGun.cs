@@ -8,6 +8,9 @@ public class WeaponMachineGun : IWeapon
     public float BaseDamage { get; set; } = 10f;
 
     public WeaponData WeaponData { get; set; }
+    public WeaponData WeaponDataInstance { get; set; }
+    public float CooldownTime { get; private set; } = 0.5f;
+
 
     private IProjectileFireStrategy fireStrategy;
     private GameObject projectilePrefab;
@@ -19,6 +22,7 @@ public class WeaponMachineGun : IWeapon
         projectilePrefab = prefab;
         firePoint = firePt;
         this.WeaponData = weaponData;
+        WeaponDataInstance = GameObject.Instantiate(weaponData);
     }
 
     public void Fire()
@@ -34,6 +38,17 @@ public class WeaponMachineGun : IWeapon
     public void Upgrade()
     {
         // Upgrade logic for Machine Gun
-        fireStrategy.PelletsCount++;
+        //fireStrategy.PelletsCount++;
+        WeaponDataInstance.weaponCooldown *= .9f;
+    }
+
+    public void UpdateWeaponCooldown(float timeDelta, float cooldownMultiplier)
+    {
+        CooldownTime -= timeDelta * cooldownMultiplier;
+        if(CooldownTime <= 0)
+        {
+            Fire();
+            CooldownTime = WeaponDataInstance.weaponCooldown;
+        }
     }
 }

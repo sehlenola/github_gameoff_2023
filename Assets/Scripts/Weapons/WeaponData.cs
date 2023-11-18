@@ -4,6 +4,7 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
+    public float weaponCooldown;
     public Sprite weaponSprite;
     public AudioClip[] fireSounds;
     // Add more properties as needed (e.g., damage, fire rate, etc.)

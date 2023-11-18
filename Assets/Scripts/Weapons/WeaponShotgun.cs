@@ -5,6 +5,9 @@ public class WeaponShotgun: IWeapon
 {
     public float BaseDamage { get; set; } = 10f;
     public WeaponData WeaponData { get; set; }
+    public WeaponData WeaponDataInstance { get; set; }
+    public float CooldownTime { get; private set; } = 0.5f;
+
     private ShotgunFireStrategy fireStrategy;
     public GameObject projectilePrefab;
     public Transform firePoint;
@@ -16,6 +19,7 @@ public class WeaponShotgun: IWeapon
         projectilePrefab = prefab;
         firePoint = firePt;
         WeaponData = weaponData;
+        WeaponDataInstance = GameObject.Instantiate(weaponData);
     }
 
     public void Fire()
@@ -35,5 +39,15 @@ public class WeaponShotgun: IWeapon
         BaseDamage += 5; 
         fireStrategy.PelletsCount += 1;
         fireStrategy.SpreadAngle += 15f;
+    }
+
+    public void UpdateWeaponCooldown(float timeDelta, float cooldownMultiplier)
+    {
+        CooldownTime -= timeDelta * cooldownMultiplier;
+        if (CooldownTime <= 0)
+        {
+            Fire();
+            CooldownTime = WeaponDataInstance.weaponCooldown;
+        }
     }
 }

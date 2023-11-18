@@ -28,6 +28,13 @@ public class WeaponManager : MonoBehaviour
         SwitchWeapon(defaultWepon);
 
     }
+    private void Update()
+    {
+        foreach(var weapon in allWeapons)
+        {
+            weapon.UpdateWeaponCooldown(Time.deltaTime, 1f);
+        }
+    }
 
     public void FireWeapon()
     {
