@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private void UpgradeWeapon_performed(InputAction.CallbackContext obj)
     {
-        weaponManager.UpgradeCurrentWeapon();
     }
 
     private void OnDisable()
@@ -42,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void NextWeapon_performed(InputAction.CallbackContext obj)
     {
-        weaponManager.NextWeapon();
+
     }
 
     private void Update()
@@ -76,7 +75,6 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             //Debug.Log("Fire: " + context.phase);
-            weaponManager.FireWeapon();
         }
     }
 
