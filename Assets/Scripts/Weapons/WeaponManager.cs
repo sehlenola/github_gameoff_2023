@@ -19,6 +19,7 @@ public class WeaponManager : MonoBehaviour
 
         AddWeapon(weapons[0]);
         AddWeapon(weapons[1]);
+        AddWeapon(weapons[2]);
 
     }
 
@@ -42,5 +43,19 @@ public class WeaponManager : MonoBehaviour
         Weapon newWeapon = weaponHolder.AddComponent<Weapon>();
         newWeapon.SetupWeapon(weaponData);
         allNewWeapons.Add(newWeapon);
+    }
+
+    public void UpgradeWeapon(WeaponData weaponData)
+    {
+        Weapon existingWeapon = weaponHolder.GetComponents<Weapon>().FirstOrDefault(w => w.weaponData == weaponData);
+        if (existingWeapon != null)
+        {
+            existingWeapon.UpgradeMe();
+        }
+    }
+
+    public void UpgradeWeapon()
+    {
+        allNewWeapons[1].UpgradeMe();
     }
 }

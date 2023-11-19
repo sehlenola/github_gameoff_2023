@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpgradeWeapon_performed(InputAction.CallbackContext obj)
     {
+        weaponManager.UpgradeWeapon();
     }
 
     private void OnDisable()

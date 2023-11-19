@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec007e7848b1e444a411325a1d2fa98, type: 3}
-  m_Name: ShotgunForwardFIreStrategy
+  m_Script: {fileID: 11500000, guid: 5fce83c27892bdd4e9daab1a5b907c42, type: 3}
+  m_Name: FireRateUpgradeSO
   m_EditorClassIdentifier: 
-  spreadAngle: 15
-  fireOffset: 0
+  upgradeName: Fire rate
+  upgradeSprite: {fileID: 21300000, guid: 602b72d4617c3694aa94419fc1b68e04, type: 3}
+  fireRateMultiplier: 0.9
