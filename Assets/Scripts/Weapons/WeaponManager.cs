@@ -14,7 +14,7 @@ public class WeaponManager : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
 
         AddWeapon(weapons[0]);
@@ -57,5 +57,18 @@ public class WeaponManager : MonoBehaviour
     public void UpgradeWeapon()
     {
         allNewWeapons[1].UpgradeMe();
+    }
+
+    public bool AlreadyHaveWeapon(WeaponData wd)
+    {
+        Weapon existingWeapon = weaponHolder.GetComponents<Weapon>().FirstOrDefault(w => w.weaponData == wd);
+        if (existingWeapon != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

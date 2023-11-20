@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7cf4b554a375b4db6868819eae4b09, type: 3}
+  m_Name: FireballSO
+  m_EditorClassIdentifier: 
+  weaponName: Fireball
+  fireStrategy: {fileID: 11400000, guid: 83be81b771a9edb478b1333185cfbf01, type: 2}
+  weaponCooldown: 2
+  weaponDamage: 1
+  pelletCount: 2
+  areaOfEffect: 1
+  areaMultiplier: 3
+  projectile: {fileID: 1434789272538182728, guid: 7117918546d5f7541b1b631329dcc513,
+    type: 3}
+  weaponSprite: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+  fireSounds:
+  - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}
+  weaponUpgrades:
+  - {fileID: 11400000, guid: a3deb91c5b260424ba08b1f210ffda32, type: 2}

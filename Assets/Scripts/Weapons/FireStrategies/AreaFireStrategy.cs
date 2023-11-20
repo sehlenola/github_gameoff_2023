@@ -4,16 +4,18 @@ using UnityEngine;
 public class AreaFireStrategySO : FireStrategy
 {
     public GameObject aoeEffectPrefab;
+    [SerializeField] private LayerMask enemyLayer;
 
     public override void Fire(Transform firePoint, WeaponData weaponData)
     {
         // Perform AOE damage logic
-        Collider[] hitColliders = Physics.OverlapSphere(firePoint.position, weaponData.areaOfEffect * weaponData.areaMultiplier);
+        Collider[] hitColliders = Physics.OverlapSphere(firePoint.position, weaponData.areaOfEffect * weaponData.areaMultiplier, enemyLayer);
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Enemy")) // Assuming your enemies have the tag "Enemy"
             {
                 // Apply damage to enemies
+                Debug.Log("Hit an enemy!");
             }
         }
 

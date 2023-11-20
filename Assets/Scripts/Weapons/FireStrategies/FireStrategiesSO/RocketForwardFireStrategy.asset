@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97beb91fede46394eb0cab6aef6f4306, type: 3}
-  m_Name: AreaFireStrategy
+  m_Script: {fileID: 11500000, guid: bec007e7848b1e444a411325a1d2fa98, type: 3}
+  m_Name: RocketForwardFireStrategy
   m_EditorClassIdentifier: 
-  aoeEffectPrefab: {fileID: 8768361959805019469, guid: 9b69f4267d5132f47bff90a9da1a2997,
-    type: 3}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  spreadAngle: 20
+  fireOffset: 2
