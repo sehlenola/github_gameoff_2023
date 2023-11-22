@@ -46,7 +46,7 @@ public class UpgradePanelSingle : MonoBehaviour
         if (isUpgrade)
         {
             newOrUpgradeText.text = "UPGRADE!";
-
+            weaponNameText.text = weaponData.weaponName;
             string weaponUpgradeText = "Upgrades: \n";
             foreach (WeaponUpgrade upgrade in weaponData.weaponUpgrades)
             {
