@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946792efd9f526f4c98de9cd2366b2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  lifeTime: 3
+  speed: 13
+  lifeTime: 4
   projectileDamage: 1
   floatingDamagePrefab: {fileID: 9085333236838335786, guid: 1af7b145084ffb140874c3a6a31bd3ff,
     type: 3}

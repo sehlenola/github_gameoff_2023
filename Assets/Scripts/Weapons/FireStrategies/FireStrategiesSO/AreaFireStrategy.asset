@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeEffectPrefab: {fileID: 8768361959805019469, guid: 9b69f4267d5132f47bff90a9da1a2997,
     type: 3}
+  areaOfEffectDamage: 1
+  floatingDamagePrefab: {fileID: 9085333236838335786, guid: 1af7b145084ffb140874c3a6a31bd3ff,
+    type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8

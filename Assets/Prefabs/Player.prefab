@@ -384,8 +384,6 @@ MonoBehaviour:
   weaponHolder: {fileID: 5574668468245505099}
   weapons:
   - {fileID: 11400000, guid: 89f5074068f2c4147bee71bcebea2a9a, type: 2}
-  - {fileID: 11400000, guid: a7d58c46a49589b4ca4ff6f48db69c4b, type: 2}
-  - {fileID: 11400000, guid: 58aa297fd53d6ee4c99fa237c2790a8b, type: 2}
 --- !u!114 &5574668469691584659
 MonoBehaviour:
   m_ObjectHideFlags: 0

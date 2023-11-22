@@ -16,10 +16,10 @@ public class WeaponManager : MonoBehaviour
 
     void Awake()
     {
-
-        AddWeapon(weapons[0]);
-        AddWeapon(weapons[1]);
-        AddWeapon(weapons[2]);
+        foreach (var weapon in weapons)
+        {
+            AddWeapon(weapon);
+        }
 
     }
 

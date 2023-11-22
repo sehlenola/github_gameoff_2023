@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, ITakeDamage
+public class Player : SingletonMonobehaviour<Player>, ITakeDamage
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;

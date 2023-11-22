@@ -71,7 +71,7 @@ public class Projectile : MonoBehaviour
     {
         // Instantiate the damage number prefab at a random position near the enemy
 
-        GameObject go = ObjectPoolManager.SpawnObject(floatingDamagePrefab, enemyPosition, Quaternion.Euler(90, 0, 0), ObjectPoolManager.PoolType.ParticleSystem);
+        GameObject go = ObjectPoolManager.SpawnObject(floatingDamagePrefab, enemyPosition + new Vector3(0,1), Quaternion.Euler(90, 0, 0), ObjectPoolManager.PoolType.ParticleSystem);
         //check if weapon damage has changed since last spawning of a projectile
 
         go.GetComponent<DamageNumber>().SetDamage(projectileDamage);
