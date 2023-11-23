@@ -17,9 +17,11 @@ public class UpgradePanelSingle : MonoBehaviour
     [SerializeField] GameObject weaponSpriteComboHolder;
 
     [SerializeField] Button upgradePanelSingleButton;
+    private SlideInAnimation slideInAnimation;
 
     private void Awake()
     {
+        slideInAnimation = GetComponent<SlideInAnimation>();
         upgradePanelSingleButton = GetComponent<Button>();
         levelUpPanel = FindObjectOfType<LevelUpPanel>();
     }
@@ -60,6 +62,7 @@ public class UpgradePanelSingle : MonoBehaviour
         else
         {
             weaponNameText.text = weaponData.weaponName;
+            weaponDescriptionText.text = weaponData.weaponDescription + "\n Upgrades: \n" + weaponData.weaponUpgrades[0].upgradeName;
         }
         weaponSprite.sprite = weaponData.weaponSprite;
 
@@ -77,4 +80,6 @@ public class UpgradePanelSingle : MonoBehaviour
             wm.AddWeapon(weaponData);
         }
     }
+
 }
+

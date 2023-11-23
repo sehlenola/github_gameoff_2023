@@ -56,7 +56,7 @@ public class WeaponManager : MonoBehaviour
 
     public void UpgradeWeapon()
     {
-        allNewWeapons[1].UpgradeMe();
+        
     }
 
     public bool AlreadyHaveWeapon(WeaponData wd)

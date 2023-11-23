@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: MachineGunSO
   m_EditorClassIdentifier: 
   weaponName: Machine Gun
+  weaponDescription: Accurate, quick firing forward machine gun
   fireStrategy: {fileID: 11400000, guid: 225f2344cab209341be2dfbb44a84b5c, type: 2}
   weaponCooldown: 1
   weaponDamage: 2
   pelletCount: 1
+  areaOfEffect: 0
   areaMultiplier: 0
   projectile: {fileID: 1434789272538182728, guid: 7117918546d5f7541b1b631329dcc513,
     type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireballSO
   m_EditorClassIdentifier: 
   weaponName: Fireball
+  weaponDescription: Fires a random spread of dumb rockets
   fireStrategy: {fileID: 11400000, guid: 83be81b771a9edb478b1333185cfbf01, type: 2}
   weaponCooldown: 2
   weaponDamage: 1
@@ -26,3 +27,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: a3deb91c5b260424ba08b1f210ffda32, type: 2}
+  - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}

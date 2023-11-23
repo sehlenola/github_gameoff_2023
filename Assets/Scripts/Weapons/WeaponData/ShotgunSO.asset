@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ShotgunSO
   m_EditorClassIdentifier: 
   weaponName: Shotgun
+  weaponDescription: Fires multiple projectiles in a cone shape
   fireStrategy: {fileID: 11400000, guid: c5cdc9bf4e8b72f42b48391b26af13b3, type: 2}
   weaponCooldown: 3.2
   weaponDamage: 3

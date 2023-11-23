@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46553d3bdfe40ff4dbb461c040dcb2c9, type: 3}
   m_Name: DamageUpgradeSO
   m_EditorClassIdentifier: 
-  upgradeName: Damage
+  upgradeName: Extra <color="blue">damage
   upgradeSprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
   additionalDamage: 1

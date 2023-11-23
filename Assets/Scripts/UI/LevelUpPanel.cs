@@ -45,6 +45,7 @@ public class LevelUpPanel : MonoBehaviour
     public void ShowUpgradePanels(int countToShow)
     {
         ClearUpgradePanels();
+        upgradePanelHolder.GetComponent<SlideInAnimation>().AnimateIn();
         gameObject.SetActive(true);
         Time.timeScale = 0f;
         //spawn upgradePanels
@@ -55,6 +56,7 @@ public class LevelUpPanel : MonoBehaviour
             WeaponManager wm = FindObjectOfType<WeaponManager>();
             bool isUpgrade = wm.AlreadyHaveWeapon(weaponData);
             upgradePanelSingle.SetupUpgradePanel(weaponData, isUpgrade);
+            //upgradePanelSingle.ShowPanel();
         }
     }
 

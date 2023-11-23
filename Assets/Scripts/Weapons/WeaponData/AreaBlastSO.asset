@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AreaBlastSO
   m_EditorClassIdentifier: 
   weaponName: Area Blast
+  weaponDescription: Damages nearby enemies
   fireStrategy: {fileID: 11400000, guid: ca11705d3dd4ef74f8586a4aa1c95496, type: 2}
   weaponCooldown: 1.2
   weaponDamage: 1

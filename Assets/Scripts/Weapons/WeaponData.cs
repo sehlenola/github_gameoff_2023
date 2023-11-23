@@ -4,6 +4,7 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     public string weaponName;
+    public string weaponDescription;
     public FireStrategy fireStrategy;
     public float weaponCooldown;
     public float weaponDamage;

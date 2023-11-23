@@ -33,11 +33,11 @@ RectTransform:
   m_Father: {fileID: 3543061146104947214}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5, y: -5}
-  m_SizeDelta: {x: 82.179, y: 22.169}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -95.9}
+  m_SizeDelta: {x: 139.2726, y: 45.1578}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3543061145849806862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -93,14 +93,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.8
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -283,6 +283,7 @@ MonoBehaviour:
   weaponSpriteComboTemplate: {fileID: 9015003503184761975, guid: 0c92efb18b3ad7b46ac7cdd34a10ce58,
     type: 3}
   weaponSpriteComboHolder: {fileID: 5167346155214073475}
+  upgradePanelSingleButton: {fileID: 0}
 --- !u!1 &3543061146350461392
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,8 +319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -44.393}
+  m_SizeDelta: {x: 200, y: 206.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3543061146350461395
 CanvasRenderer:
@@ -383,8 +384,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -451,11 +452,11 @@ RectTransform:
   m_Father: {fileID: 3543061146104947214}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 99.9}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3543061146373249828
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -26.26}
+  m_AnchoredPosition: {x: 0, y: -50.759995}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3543061146941005420
@@ -663,8 +664,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -110}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -49.3}
+  m_SizeDelta: {x: 262.0313, y: 166.7039}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4272576478133581856
 MonoBehaviour:
@@ -683,10 +684,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 50}
+  m_CellSize: {x: 250, y: 50}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1

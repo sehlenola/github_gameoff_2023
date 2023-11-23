@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private WeaponManager weaponManager;
 
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float minSpeed = 4f;
+    [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float accelerationRate = 10f;
     [SerializeField] private float rotationSpeed = 200f;
 
 
@@ -56,11 +59,14 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         // forward movement
+        Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
+        float acceleration = inputVector.y * accelerationRate * Time.deltaTime;
+        moveSpeed = moveSpeed + acceleration;
+        moveSpeed = Mathf.Clamp(moveSpeed, minSpeed, maxSpeed);
+
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
         // Rotation
-        Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
-        //Debug.Log(inputVector);
 
         float rotation = inputVector.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);

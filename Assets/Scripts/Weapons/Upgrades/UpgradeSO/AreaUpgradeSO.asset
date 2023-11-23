@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec9619fddb70404981fea71d0612036, type: 3}
   m_Name: AreaUpgradeSO
   m_EditorClassIdentifier: 
-  upgradeName: Area
+  upgradeName: Increased <color="blue">Area
   upgradeSprite: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
   areaMultiplier: 1.5
