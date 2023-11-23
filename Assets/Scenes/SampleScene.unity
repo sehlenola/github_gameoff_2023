@@ -619,7 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec,
     type: 3}
-  spawnRate: 1
+  spawnRate: 3
   minDistanceFromPlayer: 10
   playerTransform: {fileID: 1233493622}
   spawnPoints:
@@ -2760,6 +2760,11 @@ PrefabInstance:
       propertyPath: weapons.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5574668469691584659, guid: 87d423577a2fb6242ad5d2eb940129b3,
+        type: 3}
+      propertyPath: maxExperience
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5574668469691584668, guid: 87d423577a2fb6242ad5d2eb940129b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -2838,6 +2843,11 @@ PrefabInstance:
       propertyPath: endPoint
       value: 
       objectReference: {fileID: 1769970744}
+    - target: {fileID: 9183156249570784136, guid: f4fc4b0118d44a149a4ebe9e4adb4b58,
+        type: 3}
+      propertyPath: playTime
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 9183156249570784136, guid: f4fc4b0118d44a149a4ebe9e4adb4b58,
         type: 3}
       propertyPath: startPoint

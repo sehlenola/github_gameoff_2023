@@ -101,6 +101,8 @@ MonoBehaviour:
   blinkFrequency: 0.1
   maxHealth: 3
   currentHealth: 0
+  experiencePickupPrefab: {fileID: 7771071103508273695, guid: e46e9687185f59b44b37b0d1eaf5532e,
+    type: 3}
   defaultMaterial: {fileID: 2100000, guid: 8321c54901a26314ca293795854adf95, type: 2}
   flashMaterial: {fileID: 2100000, guid: 7e7e2a2e6986c374f8ee76d396bbc7f4, type: 2}
 --- !u!1 &4646804649306775397

@@ -56,7 +56,6 @@ public class Projectile : MonoBehaviour
             ITakeDamage damageable = other.GetComponent<ITakeDamage>();
             if (damageable != null)
             {
-                Debug.Log("Hit enemy with projectile!");
                 damageable.TakeDamage(projectileDamage);
                 SpawnDamageNumber(other.transform.position);
 

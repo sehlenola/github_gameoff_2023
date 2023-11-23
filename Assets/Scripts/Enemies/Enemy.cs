@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private int currentHealth;
     private bool isFlashing = false;
+    [SerializeField] private GameObject experiencePickupPrefab;
 
     [SerializeField] private Material defaultMaterial; // Assign the default material
     [SerializeField] private Material flashMaterial;   // Assign a material to indicate damage
@@ -58,6 +59,8 @@ public class Enemy : MonoBehaviour, ITakeDamage
             {
                 StopCoroutine(blinkCoroutine);
             }
+            DropExperience();
+
             ObjectPoolManager.ReturnObjectToPool(gameObject);
             return;
         }
@@ -69,6 +72,11 @@ public class Enemy : MonoBehaviour, ITakeDamage
         blinkCoroutine = StartCoroutine(FlashEffect());
     }
 
+    private void DropExperience()
+    {
+        GameObject go = ObjectPoolManager.SpawnObject(experiencePickupPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+
+    }
 
     IEnumerator FlashEffect()
     {
