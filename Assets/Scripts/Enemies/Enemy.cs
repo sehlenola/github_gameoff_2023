@@ -103,4 +103,22 @@ public class Enemy : MonoBehaviour, ITakeDamage
         enemyRenderer.material = defaultMaterial;
         isFlashing = false;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Assuming the enemy has a component that implements ITakeDamage
+            ITakeDamage damageable = other.GetComponent<ITakeDamage>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(1f);
+
+
+            }
+
+            // Destroy or deactivate the projectile
+            ObjectPoolManager.ReturnObjectToPool(gameObject);
+        }
+    }
 }

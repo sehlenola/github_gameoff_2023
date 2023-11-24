@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
         foreach (var point in spawnPoints)
         {
-            if (Vector3.Distance(point.position, playerTransform.position) >= minDistanceFromPlayer)
+            if (playerTransform != null && Vector3.Distance(point.position, playerTransform.position) >= minDistanceFromPlayer)
             {
                 validSpawnPoints.Add(point);
             }
