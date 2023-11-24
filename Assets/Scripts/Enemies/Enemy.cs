@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
     private void Start()
     {
-        targetTransform = Player.Instance.transform;
+        //targetTransform = Player.Instance.transform;
+        targetTransform = Orb.Instance.transform;
     }
     private void OnEnable()
     {
