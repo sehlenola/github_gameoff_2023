@@ -170,7 +170,7 @@ MonoBehaviour:
   enemyTypesPerLevel:
   - {fileID: 11400000, guid: 5bb923b2c4bae414084ba20d1e140230, type: 2}
   - {fileID: 11400000, guid: 7bd1c5553a1dc87429b8c055399ed343, type: 2}
-  maxEnemies: 10
+  maxEnemies: 20
   minEnemies: 10
   minEnemiesTimeMultiplier: 3
   currentWaveIndex: 0

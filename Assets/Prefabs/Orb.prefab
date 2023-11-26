@@ -132,8 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   endPoint: {fileID: 0}
+  retreatSpeedMultiplier: 4
   orbVisual: {fileID: 3374858716856659806}
-  playTime: 30
+  playTime: 20
   maxHealth: 10
   currentHealth: 10
   orbCarrierRadius: 1

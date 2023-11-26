@@ -3168,7 +3168,7 @@ PrefabInstance:
     - target: {fileID: 1215581329662707903, guid: a14d51e084871674c88ddc6317003e10,
         type: 3}
       propertyPath: allWeaponData.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1215581329662707903, guid: a14d51e084871674c88ddc6317003e10,
         type: 3}
@@ -3193,6 +3193,12 @@ PrefabInstance:
       propertyPath: allWeaponData.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: a7d58c46a49589b4ca4ff6f48db69c4b,
+        type: 2}
+    - target: {fileID: 1215581329662707903, guid: a14d51e084871674c88ddc6317003e10,
+        type: 3}
+      propertyPath: allWeaponData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 288e9684305491148a35901dfc25711f,
         type: 2}
     - target: {fileID: 1215581329662707904, guid: a14d51e084871674c88ddc6317003e10,
         type: 3}
@@ -3556,7 +3562,7 @@ PrefabInstance:
     - target: {fileID: 9183156249570784136, guid: f4fc4b0118d44a149a4ebe9e4adb4b58,
         type: 3}
       propertyPath: playTime
-      value: 60
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9183156249570784136, guid: f4fc4b0118d44a149a4ebe9e4adb4b58,
         type: 3}

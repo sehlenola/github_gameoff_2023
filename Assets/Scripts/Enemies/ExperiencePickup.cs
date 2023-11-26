@@ -6,10 +6,13 @@ public class ExperiencePickup : MonoBehaviour
 {
     [SerializeField] private int experienceValue = 1;
     [SerializeField] private bool pickedUp;
+    [SerializeField] private float lifeTime = 30f;
+    private Coroutine _returnToPoolTimerCoroutine;
 
     private void OnEnable()
     {
         pickedUp = false;
+        _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -21,4 +24,17 @@ public class ExperiencePickup : MonoBehaviour
         }
 
     }
+
+    private IEnumerator ReturnToPoolAfterTime()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < lifeTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
+    }
+
+
 }
