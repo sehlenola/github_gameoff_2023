@@ -28,6 +28,7 @@ public class ForwardFireStrategy : FireStrategy
             //check if weapon damage has changed since last spawning of a projectile
 
             go.GetComponent<Projectile>().SetDamage(weaponData.weaponDamage);
+            PlayFireSound(weaponData, firePoint);
 
         }
     }

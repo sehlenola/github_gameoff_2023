@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public Transform firePoint;
     public GameObject weaponHolder;
+    public bool isActive = true;
 
     private List<Weapon> allNewWeapons = new List<Weapon>();
 
@@ -25,6 +24,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
+        if (!isActive) return;
         foreach(var weapon in allNewWeapons)
         {
             weapon.UpdateWeaponTimer(Time.deltaTime, 1f);

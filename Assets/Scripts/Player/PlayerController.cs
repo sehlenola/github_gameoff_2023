@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float accelerationRate = 10f;
     [SerializeField] private float rotationSpeed = 200f;
+    private bool isActive = true;
+
 
 
     private void Awake()
@@ -24,36 +27,39 @@ public class PlayerController : MonoBehaviour
         weaponManager = GetComponent<WeaponManager>();
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
-        playerInputActions.Player.Fire.performed += Fire;
-        playerInputActions.Player.Movement.performed += Movement_performed;
-        playerInputActions.Player.NextWeapon.performed += NextWeapon_performed;
-        playerInputActions.Player.UpgradeWeapon.performed += UpgradeWeapon_performed;
-        //playerInput.onActionTriggered += PlayerInput_onActionTriggered;
+    }
+    private void OnEnable()
+    {
+        StaticEventHandler.OnGameOver += StaticEventHandler_OnGameOver;
+        StaticEventHandler.OnGameWon += StaticEventHandler_OnGameWon;
     }
 
-    private void UpgradeWeapon_performed(InputAction.CallbackContext obj)
-    {
-        weaponManager.UpgradeWeapon();
-    }
+
 
     private void OnDisable()
     {
-        playerInputActions.Player.Fire.performed -= Fire;
-        playerInputActions.Player.Movement.performed -= Movement_performed;
-        playerInputActions.Player.NextWeapon.performed -= NextWeapon_performed;
+        StaticEventHandler.OnGameOver -= StaticEventHandler_OnGameOver;
+        StaticEventHandler.OnGameWon -= StaticEventHandler_OnGameWon;
     }
 
-    private void NextWeapon_performed(InputAction.CallbackContext obj)
-    {
-
-    }
 
     private void Update()
     {
-
-
+        if (!isActive) { return; }
         HandleMovement();
 
+    }
+
+    private void StaticEventHandler_OnGameWon(GameWonArgs obj)
+    {
+        isActive = false;
+        weaponManager.isActive = false;
+    }
+
+    private void StaticEventHandler_OnGameOver(GameOverArgs obj)
+    {
+        isActive = false;
+        weaponManager.isActive = false;
     }
 
     private void HandleMovement()
@@ -72,9 +78,6 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0, rotation, 0);
     }
 
-    private void Movement_performed(InputAction.CallbackContext context)
-    {
-    }
 
     public void Fire(InputAction.CallbackContext context)
     {

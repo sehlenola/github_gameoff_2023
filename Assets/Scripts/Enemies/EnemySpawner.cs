@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Mono.CompilerServices.SymbolWriter;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,24 +10,107 @@ public class EnemySpawner : MonoBehaviour
     public Transform playerTransform; // Reference to the player's transform
     public List<Transform> spawnPoints; // Manually assigned list of spawn points
 
+    public List<EnemyWave> enemyWaves;
+    public List<EnemyWave> enemyTypesPerLevel;
+
+
+    private int activeEnemies = 0;
+    [SerializeField] private int maxEnemies = 10;
+    [SerializeField] private int minEnemies = 5;
+    [SerializeField] private float minEnemiesTimeMultiplier = 2;
+    [SerializeField] private int currentWaveIndex = 0;
+    [SerializeField] private int enemyIndex = 0;
+    [SerializeField] private bool isSpawning = true;
+    [SerializeField] private float offset = 5f;
+
     private float currentSpawnTime;
+
+    void OnEnable()
+    {
+        // Subscribe to events
+        StaticEventHandler.OnEnemySpawned += StaticEventHandler_OnEnemySpawned;
+        StaticEventHandler.OnEnemyKilled += StaticEventHandler_OnEnemyKilled;
+        StaticEventHandler.OnTripComplete += StaticEventHandler_OnTripComplete;
+        StaticEventHandler.OnGameWon += StaticEventHandler_OnGameWon;
+        StaticEventHandler.OnGameOver += StaticEventHandler_OnGameOver;
+    }
+
+    private void StaticEventHandler_OnGameOver(GameOverArgs obj)
+    {
+        isSpawning = false;
+    }
+
+    private void StaticEventHandler_OnGameWon(GameWonArgs obj)
+    {
+        isSpawning = false;
+    }
+
+    private void StaticEventHandler_OnTripComplete(TripCompleteArgs obj)
+    {
+        if (currentWaveIndex < enemyWaves.Count)
+        {
+            SpawnWave(enemyWaves[currentWaveIndex]);
+        }
+        else
+        {
+            Debug.Log("No more waves to spawn");
+        }
+        currentWaveIndex++;
+    }
+
+    private void StaticEventHandler_OnEnemyKilled(EnemyKilledArgs obj)
+    {
+        activeEnemies--;
+        Debug.Log("Active Enemies: " + activeEnemies);
+    }
+
+    private void StaticEventHandler_OnEnemySpawned(EnemySpawnedArgs obj)
+    {
+        activeEnemies++;
+        Debug.Log("Active Enemies: " + activeEnemies);
+    }
+
 
     void Update()
     {
+        if (!isSpawning) return;
         currentSpawnTime += Time.deltaTime;
-        if (currentSpawnTime >= spawnRate)
+        if(activeEnemies < minEnemies)
         {
-            SpawnEnemy();
+            currentSpawnTime += Time.deltaTime * minEnemiesTimeMultiplier;
+        }
+        
+        if (currentSpawnTime >= spawnRate && activeEnemies <= maxEnemies)
+        {
+
+            if (currentWaveIndex < enemyTypesPerLevel.Count)
+            {
+                EnemyWave currentWave = enemyTypesPerLevel[currentWaveIndex];
+
+                if (enemyIndex < currentWave.enemies.Count)
+                {
+                    enemyPrefab = currentWave.enemies[enemyIndex];
+                    enemyIndex++;
+                }
+                else
+                {
+                    enemyIndex = 0; // Reset index to loop back to the first enemy
+                    enemyPrefab = currentWave.enemies[enemyIndex];
+                    enemyIndex++;
+                }
+            }
+            SpawnEnemy(enemyPrefab);
             currentSpawnTime = 0f;
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemyPrefab)
     {
         Transform spawnPoint = ChooseSpawnPoint();
         if (spawnPoint != null)
         {
-            GameObject go = ObjectPoolManager.SpawnObject(enemyPrefab, spawnPoint.position, Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            GameObject go = ObjectPoolManager.SpawnObject(enemyPrefab, spawnPoint.position + new Vector3(Random.Range(-offset,offset),0, Random.Range(-offset, offset)), Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
+            StaticEventHandler.CallOnEnemySpawnedEvent();
         }
     }
 
@@ -48,5 +132,13 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return null;
+    }
+
+    void SpawnWave(EnemyWave wave)
+    {
+        foreach (GameObject entry in wave.enemies)
+        {
+            SpawnEnemy(entry);
+        }
     }
 }

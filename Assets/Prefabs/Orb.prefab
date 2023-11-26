@@ -133,7 +133,7 @@ MonoBehaviour:
   startPoint: {fileID: 0}
   endPoint: {fileID: 0}
   orbVisual: {fileID: 3374858716856659806}
-  playTime: 60
+  playTime: 30
   maxHealth: 10
   currentHealth: 10
   orbCarrierRadius: 1

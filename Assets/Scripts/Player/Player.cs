@@ -6,22 +6,46 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
-    [SerializeField] private int maxExperience = 10;
+    [SerializeField] private int maxExperience = 5;
     [SerializeField] private int currentExperience;
+    [SerializeField] private int currentLevel;
     [SerializeField] private Image hpBar;
     [SerializeField] private GameObject hpObject;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip healAudio;
+
 
 
     private void Start()
     {
+        currentLevel = 1;
+        audioSource = GetComponent<AudioSource>();
+        StaticEventHandler.OnTripComplete += StaticEventHandler_OnTripComplete;
         currentHealth = maxHealth;
         UpdateHpBar();
+    }
+    private void OnDisable()
+    {
+        StaticEventHandler.OnTripComplete -= StaticEventHandler_OnTripComplete;
+    }
+
+    private void StaticEventHandler_OnTripComplete(TripCompleteArgs obj)
+    {
+        HealDamage(1);
+        audioSource.PlayOneShot(healAudio);
     }
 
     private void Update()
     {
         hpObject.transform.position = transform.position + new Vector3(0, 0, -2);
         hpObject.transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
+    }
+
+    private void HealDamage(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Min(maxHealth, currentHealth);
+        UpdateHpBar();
     }
     public void TakeDamage(float amount)
     {
@@ -46,6 +70,8 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
 
     private void LevelUp()
     {
+        maxExperience+= currentLevel * 2;
+        currentLevel++;
         StaticEventHandler.CallOnLevelUpEvent(1);
     }
     private void UpdateHpBar()

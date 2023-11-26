@@ -22,7 +22,7 @@ MonoBehaviour:
   areaMultiplier: 0
   projectile: {fileID: 6399710562725468282, guid: bccea15a76c7cdc44b91479dfb583282,
     type: 3}
-  weaponSprite: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 8a201288476d6c74ea620f66245fa5ad, type: 3}
   fireSounds:
   - {fileID: 8300000, guid: 2fb57a790f9bfcd4bb5c63eb88f536c9, type: 3}
   - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}

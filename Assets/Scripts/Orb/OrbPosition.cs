@@ -13,7 +13,7 @@ public class OrbPosition : MonoBehaviour
     {
         if (startPoint)
         {
-            SetupOrbs(GameManager.Instance.GetTripsNeeded());
+            SetupOrbs(GameManager.Instance.GetTripsNeeded() - 1);
         }
     }
 

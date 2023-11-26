@@ -8,7 +8,9 @@ public static class StaticEventHandler
     public static event Action<LevelUpArgs> OnLevelUp;
     public static event Action<TripCompleteArgs> OnTripComplete;
     public static event Action<TripStartArgs> OnTripStarted;
-    public static event Action<LevelUpWeaponSelected> OnLevelUpWeaponSelected;
+    public static event Action<LevelUpWeaponSelectedArgs> OnLevelUpWeaponSelected;
+    public static event Action<EnemyKilledArgs> OnEnemyKilled;
+    public static event Action<EnemySpawnedArgs> OnEnemySpawned;
 
     public static void CallGameOverEvent(string title, string body)
     {
@@ -25,7 +27,7 @@ public static class StaticEventHandler
     }
     public static void OnLevelUpWeaponSelectedEvent(WeaponData wd)
     {
-        OnLevelUpWeaponSelected?.Invoke(new LevelUpWeaponSelected() { weaponData = wd});
+        OnLevelUpWeaponSelected?.Invoke(new LevelUpWeaponSelectedArgs() { weaponData = wd});
     }
 
     public static void CallOnTripCompleteEvent(int trip)
@@ -36,6 +38,14 @@ public static class StaticEventHandler
     public static void CallOnTripStartedEvent(int trip)
     {
         OnTripStarted?.Invoke(new TripStartArgs() { trip = trip });
+    }
+    public static void CallOnEnemyKilledEvent()
+    {
+        OnEnemyKilled?.Invoke(new EnemyKilledArgs() {});
+    }
+    public static void CallOnEnemySpawnedEvent()
+    {
+        OnEnemySpawned?.Invoke(new EnemySpawnedArgs() {});
     }
 
 
@@ -58,7 +68,7 @@ public class LevelUpArgs : EventArgs
     public int level;
 }
 
-public class LevelUpWeaponSelected: EventArgs
+public class LevelUpWeaponSelectedArgs: EventArgs
 {
     public WeaponData weaponData;
 }
@@ -71,5 +81,14 @@ public class TripCompleteArgs : EventArgs
 public class TripStartArgs : EventArgs
 {
     public int trip;
+}
+public class EnemyKilledArgs: EventArgs
+{
+
+}
+
+public class EnemySpawnedArgs : EventArgs
+{
+
 }
 

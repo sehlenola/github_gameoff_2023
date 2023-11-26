@@ -11,6 +11,8 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
     private Transform currentTarget;
     private bool isMovingToEndPoint;
     private float speed;
+    private float retreatSpeed; 
+    [SerializeField] private float retreatSpeedMultiplier = 4;
     [SerializeField] private GameObject orbVisual;
 
     public float playTime = 60f; // Duration from start to end
@@ -82,7 +84,8 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
 
     void MoveTowardsTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
+        if(isMovingToEndPoint) transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
+        if(!isMovingToEndPoint) transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, retreatSpeed * Time.deltaTime);
 
         if (transform.position == currentTarget.position)
         {
@@ -125,8 +128,9 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
 
         if (currentHealth <= 0)
         {
+            StaticEventHandler.CallGameOverEvent("Game Over", "The light orb was destroyed!");
             Destroy(gameObject);
-            // Handle orb destruction, like losing the game
+            
         }
     }
 
@@ -151,6 +155,7 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
     {
         float distance = Vector3.Distance(startPoint.position, endPoint.position);
         speed = distance / playTime;
+        retreatSpeed = speed * retreatSpeedMultiplier;
     }
 
     void OnTriggerEnter(Collider other)
