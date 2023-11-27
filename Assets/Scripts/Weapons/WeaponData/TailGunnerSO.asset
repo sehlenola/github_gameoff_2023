@@ -20,7 +20,7 @@ MonoBehaviour:
   pelletCount: 1
   areaOfEffect: 0
   areaMultiplier: 0
-  projectile: {fileID: 1434789272538182728, guid: 7117918546d5f7541b1b631329dcc513,
+  projectile: {fileID: 813109992470189509, guid: cedf2bc420d11e2459287921777db4a7,
     type: 3}
   weaponSprite: {fileID: 21300000, guid: ed64f3a17f2ede646be21ed6edc9161a, type: 3}
   fireSounds:

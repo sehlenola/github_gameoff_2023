@@ -39,12 +39,12 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
 
     private void StaticEventHandler_OnGameOver(GameOverArgs obj)
     {
-        speed = 0f;
+        speed = 0f; retreatSpeed = 0;
     }
 
     private void StaticEventHandler_OnGameWon(GameWonArgs obj)
     {
-        speed = 0f;
+        speed = 0f; retreatSpeed = 0;
     }
 
     private void OnDisable()

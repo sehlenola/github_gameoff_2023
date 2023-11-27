@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[CreateAssetMenu(fileName = "ForwardFireStrategy", menuName = "FireStrategy/Forward Fire")]
-public class ForwardFireStrategy : FireStrategy
+[CreateAssetMenu(fileName = "ForwardFireStrategy", menuName = "FireStrategy/Forward Fire AOE")]
+public class ForwardFireStrategyAoe : FireStrategy
 {
     public float spreadAngle;
     public float fireOffset;
@@ -26,9 +26,10 @@ public class ForwardFireStrategy : FireStrategy
             GameObject go = ObjectPoolManager.SpawnObject(weaponData.projectile, spawnPosition, firePoint.transform.rotation * spreadRotation, ObjectPoolManager.PoolType.Gameobject);
             //check if weapon damage has changed since last spawning of a projectile
 
-            Projectile myProjectile = go.GetComponent<Projectile>();
-            myProjectile.SetDamage(weaponData.weaponDamage);
+            ProjectileAoe myProjectile = go.GetComponent<ProjectileAoe>();
             myProjectile.SetWeaponData(weaponData);
+            myProjectile.SetDamage(weaponData.weaponDamage);
+
             PlayFireSound(weaponData, firePoint);
 
         }

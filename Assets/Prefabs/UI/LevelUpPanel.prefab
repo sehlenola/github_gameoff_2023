@@ -93,7 +93,13 @@ MonoBehaviour:
   upgradePanelHolder: {fileID: 1215581329872624150}
   upgradePanelPrefab: {fileID: 3543061146104947213, guid: b22607416b07ab54abc374a5ef4a97cc,
     type: 3}
-  allWeaponData: []
+  allWeaponData:
+  - {fileID: 11400000, guid: 58aa297fd53d6ee4c99fa237c2790a8b, type: 2}
+  - {fileID: 11400000, guid: 5c954b39c18fe6f45a7ac05e749c1157, type: 2}
+  - {fileID: 11400000, guid: 89f5074068f2c4147bee71bcebea2a9a, type: 2}
+  - {fileID: 11400000, guid: a7d58c46a49589b4ca4ff6f48db69c4b, type: 2}
+  - {fileID: 11400000, guid: 288e9684305491148a35901dfc25711f, type: 2}
+  - {fileID: 11400000, guid: 6680003feaf42c144a46a803690beda3, type: 2}
 --- !u!1 &1215581329872624150
 GameObject:
   m_ObjectHideFlags: 0

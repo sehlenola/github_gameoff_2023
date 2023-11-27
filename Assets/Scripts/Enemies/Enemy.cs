@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour, ITakeDamage
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Coroutine blinkCoroutine;
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float blinkDuration = 0.4f;
-    [SerializeField] private float blinkFrequency = 0.1f;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private int currentHealth;
     private bool isFlashing = false;

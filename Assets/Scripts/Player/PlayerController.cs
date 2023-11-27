@@ -87,7 +87,10 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Fire: " + context.phase);
         }
     }
-
+    public float GetSpeed()
+    {
+        return moveSpeed;
+    }
 
 
 }

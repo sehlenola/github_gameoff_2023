@@ -18,10 +18,35 @@ PrefabInstance:
       propertyPath: lifeTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 717952484281575541, guid: 7117918546d5f7541b1b631329dcc513,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717952484281575541, guid: 7117918546d5f7541b1b631329dcc513,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717952484281575541, guid: 7117918546d5f7541b1b631329dcc513,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1434789272538182728, guid: 7117918546d5f7541b1b631329dcc513,
         type: 3}
       propertyPath: m_Name
       value: ProjectileShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379501841332476630, guid: 7117918546d5f7541b1b631329dcc513,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446629755640125532, guid: 7117918546d5f7541b1b631329dcc513,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5687902813835398494, guid: 7117918546d5f7541b1b631329dcc513,
         type: 3}

@@ -11,6 +11,7 @@ public static class StaticEventHandler
     public static event Action<LevelUpWeaponSelectedArgs> OnLevelUpWeaponSelected;
     public static event Action<EnemyKilledArgs> OnEnemyKilled;
     public static event Action<EnemySpawnedArgs> OnEnemySpawned;
+    public static event Action<ExperiencePickupArgs> OnExperiencePickup;
 
     public static void CallGameOverEvent(string title, string body)
     {
@@ -46,6 +47,11 @@ public static class StaticEventHandler
     public static void CallOnEnemySpawnedEvent()
     {
         OnEnemySpawned?.Invoke(new EnemySpawnedArgs() {});
+    }
+
+    public static void CallOnExperiencePickupEvent(int currentExp, int maxExp)
+    {
+        OnExperiencePickup?.Invoke(new ExperiencePickupArgs() { currentExperience = currentExp, maxExperience = maxExp });
     }
 
 
@@ -90,5 +96,11 @@ public class EnemyKilledArgs: EventArgs
 public class EnemySpawnedArgs : EventArgs
 {
 
+}
+
+public class ExperiencePickupArgs : EventArgs
+{
+    public int currentExperience;
+    public int maxExperience;
 }
 
