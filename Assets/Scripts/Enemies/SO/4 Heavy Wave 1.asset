@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff29f4b969a0f944bf52116e8c9b086, type: 3}
+  m_Name: 4 Heavy Wave 1
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}
+  - {fileID: 962893550693971380, guid: 7b3d17c52473a5c409c35514886b1b7f, type: 3}

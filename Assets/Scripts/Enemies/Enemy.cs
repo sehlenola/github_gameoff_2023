@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour, ITakeDamage
 {
@@ -58,11 +59,13 @@ public class Enemy : MonoBehaviour, ITakeDamage
         {
             if(targetTransform.transform.position.x > transform.position.x)
             {
-                SetVisual(true);
+                //SetVisual(true);
+                LookTowardsTarget(targetTransform, true);
             }
             else
             {
-                SetVisual(false);
+                //SetVisual(false);
+                LookTowardsTarget(targetTransform, false);
             }
         }
     }
@@ -72,6 +75,19 @@ public class Enemy : MonoBehaviour, ITakeDamage
         visualLeft.SetActive(!v);
         visualRight.SetActive(v);
     }
+
+    private void LookTowardsTarget(Transform target, bool lookRight)
+    {
+        visualRight.SetActive(false);
+        visualLeft.SetActive(false);
+        if (target != null)
+        {
+             float angle = lookRight ? -30 : 30; // Adjust angle as needed
+             transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
+
 
     private void OnDisable()
     {

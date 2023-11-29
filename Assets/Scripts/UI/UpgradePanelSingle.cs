@@ -57,12 +57,17 @@ public class UpgradePanelSingle : MonoBehaviour
                 newSpriteTextCombo.SetupSpriteTextCombo(upgrade.upgradeSprite, upgrade.upgradeName);
             }
             weaponDescriptionText.text = weaponUpgradeText;
-            weaponDescriptionText.text = "";
+            weaponDescriptionText.text = weaponData.weaponDescription;
         }
         else
         {
             weaponNameText.text = weaponData.weaponName;
-            weaponDescriptionText.text = weaponData.weaponDescription + "\n Upgrades: \n" + weaponData.weaponUpgrades[0].upgradeName;
+            weaponDescriptionText.text = weaponData.weaponDescription;
+            foreach (WeaponUpgrade upgrade in weaponData.weaponUpgrades)
+            {
+                UpgradeSpriteTextCombo newSpriteTextCombo = Instantiate(weaponSpriteComboTemplate, weaponSpriteComboHolder.transform);
+                newSpriteTextCombo.SetupSpriteTextCombo(upgrade.upgradeSprite, upgrade.upgradeName);
+            }
         }
         weaponSprite.sprite = weaponData.weaponSprite;
 

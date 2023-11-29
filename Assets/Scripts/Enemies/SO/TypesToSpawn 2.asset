@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: TypesToSpawn 2
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
   - {fileID: 7611368782291915293, guid: 33d79b711ddc076499e1f678060b2169, type: 3}
-  - {fileID: 7611368782291915293, guid: 2580e0b08cfbec846a47a1f116e1df1e, type: 3}
-  - {fileID: 7611368782291915293, guid: 2580e0b08cfbec846a47a1f116e1df1e, type: 3}
-  - {fileID: 7611368782291915293, guid: 2580e0b08cfbec846a47a1f116e1df1e, type: 3}
-  - {fileID: 7611368782291915293, guid: 2580e0b08cfbec846a47a1f116e1df1e, type: 3}
-  - {fileID: 7611368782291915293, guid: 2580e0b08cfbec846a47a1f116e1df1e, type: 3}
+  - {fileID: 7611368782291915293, guid: 33d79b711ddc076499e1f678060b2169, type: 3}
+  - {fileID: 7611368782291915293, guid: 33d79b711ddc076499e1f678060b2169, type: 3}
+  - {fileID: 1006791634649666678, guid: 62379e9812db759418eddc88e9f67041, type: 3}

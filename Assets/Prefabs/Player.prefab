@@ -789,13 +789,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  maxExperience: 5
+  maxExperience: 3
   currentExperience: 0
   currentLevel: 0
   hpBar: {fileID: 6073771065111918873}
   hpObject: {fileID: 6027786226491438448}
   audioSource: {fileID: 0}
   healAudio: {fileID: 8300000, guid: a8b2b04dac3160a43ac8e67aba9353fa, type: 3}
+  playerController: {fileID: 0}
 --- !u!54 &4695529706795602658
 Rigidbody:
   m_ObjectHideFlags: 0

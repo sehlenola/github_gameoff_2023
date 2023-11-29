@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TypesToSpawn 1
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
+  - {fileID: 7611368782291915293, guid: 33d79b711ddc076499e1f678060b2169, type: 3}

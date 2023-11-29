@@ -47,6 +47,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void StaticEventHandler_OnTripComplete(TripCompleteArgs obj)
     {
+        maxEnemies += 5;
+        minEnemies += 2;
         if (currentWaveIndex < enemyWaves.Count)
         {
             SpawnWave(enemyWaves[currentWaveIndex]);
@@ -104,9 +106,14 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void SpawnEnemy(GameObject enemyPrefab)
+    void SpawnEnemy(GameObject enemyPrefab, Transform fixedSpawnPoint = null)
     {
         Transform spawnPoint = ChooseSpawnPoint();
+        if (fixedSpawnPoint)
+        {
+            spawnPoint = fixedSpawnPoint;
+        }
+
         if (spawnPoint != null)
         {
             GameObject go = ObjectPoolManager.SpawnObject(enemyPrefab, spawnPoint.position + new Vector3(Random.Range(-offset,offset),0, Random.Range(-offset, offset)), Quaternion.identity, ObjectPoolManager.PoolType.Gameobject);
@@ -136,9 +143,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave(EnemyWave wave)
     {
+        if (!isSpawning) return;
+        Transform fixedSpawnPoint = ChooseSpawnPoint();
         foreach (GameObject entry in wave.enemies)
         {
-            SpawnEnemy(entry);
+            SpawnEnemy(entry, fixedSpawnPoint);
         }
     }
 }

@@ -8,6 +8,8 @@ public class OrbPosition : MonoBehaviour
     [SerializeField] private float randomOffset = 3f;
     [SerializeField] private bool startPoint;
     private Queue<GameObject> visualOrbs = new Queue<GameObject>();
+    [SerializeField] private List<Transform> spawnPositions = new List<Transform>();
+    private int spawnCount = 0;
 
     private void Start()
     {
@@ -64,6 +66,18 @@ public class OrbPosition : MonoBehaviour
 
     public GameObject SpawnOrb()
     {
-        return Instantiate(visualOrbPrefab, transform.position + new Vector3(Random.Range(-randomOffset, randomOffset),0, Random.Range(-randomOffset, randomOffset)), Quaternion.identity);
+        if (spawnCount < spawnPositions.Count)
+        {
+
+            Vector3 spawnPosition = spawnPositions[spawnCount].position;
+            spawnCount++;
+            return Instantiate(visualOrbPrefab, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            spawnCount++;
+            return Instantiate(visualOrbPrefab, transform.position + new Vector3(Random.Range(-randomOffset, randomOffset), 0, Random.Range(-randomOffset, randomOffset)), Quaternion.identity);
+        }
+
     }
 }

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  lifeTime: 2.2
+  lifeTime: 2
   projectileDamage: 1
   floatingDamagePrefab: {fileID: 9085333236838335786, guid: 1af7b145084ffb140874c3a6a31bd3ff,
     type: 3}
@@ -206,7 +206,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &3956383686325421807
 TrailRenderer:
@@ -229,7 +229,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,6 +275,15 @@ TrailRenderer:
         tangentMode: 0
         weightedMode: 0
         inWeight: 1
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.94237286
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -333,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6298b3d9e9ad024681201d33fd57ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 0.6
+  lerpSpeed: 0.8
   target: {x: 0, y: -180, z: 0}
 --- !u!1001 &2322334873804168996
 PrefabInstance:

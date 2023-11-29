@@ -53,7 +53,7 @@ public class ProjectileAoe : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        //ExplodeDamage(weaponData);
+        ExplodeDamage(weaponData);
         ExplodeVisuals();
         ObjectPoolManager.ReturnObjectToPool(gameObject);
     }

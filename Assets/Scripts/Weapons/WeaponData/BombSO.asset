@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponDescription: bomb stuff
   fireStrategy: {fileID: 11400000, guid: 49ffde8cdd558d24b920982041c13f8b, type: 2}
   weaponCooldown: 3
-  weaponDamage: 1
+  weaponDamage: 3
   pelletCount: 1
   areaOfEffect: 2
   areaMultiplier: 1
@@ -27,4 +27,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 2b6afc02183a8f047ba60ceb24a53dbf, type: 2}
-  - {fileID: 11400000, guid: 999b71c3746cd96449dc630d3f9c3044, type: 2}
+  - {fileID: 11400000, guid: 8f25aa7857dba6a4b8739950c41f9e1f, type: 2}

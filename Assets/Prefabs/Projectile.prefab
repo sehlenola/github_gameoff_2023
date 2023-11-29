@@ -50,11 +50,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lifeTime: 4
+  lifeTime: 2.5
   projectileDamage: 1
   floatingDamagePrefab: {fileID: 9085333236838335786, guid: 1af7b145084ffb140874c3a6a31bd3ff,
     type: 3}
   trailRenderer: {fileID: 4994750403103135882}
+  weaponData: {fileID: 0}
 --- !u!54 &507449450390251085
 Rigidbody:
   m_ObjectHideFlags: 0

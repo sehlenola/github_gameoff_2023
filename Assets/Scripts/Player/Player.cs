@@ -76,7 +76,7 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
 
     private void LevelUp()
     {
-        maxExperience+= currentLevel * 2;
+        maxExperience+= 1;
         currentLevel++;
         StaticEventHandler.CallOnLevelUpEvent(currentLevel);
     }

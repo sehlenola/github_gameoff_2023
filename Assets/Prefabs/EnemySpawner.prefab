@@ -164,12 +164,27 @@ MonoBehaviour:
   - {fileID: 3993252244348490005}
   - {fileID: 3993252244095803145}
   enemyWaves:
-  - {fileID: 11400000, guid: 6ab9abf502621654b81b107a4fd22810, type: 2}
   - {fileID: 11400000, guid: f33493be6bb9aae419ab69f99317b2fd, type: 2}
   - {fileID: 11400000, guid: cfea250be1359cc48a0268c867073e5e, type: 2}
+  - {fileID: 11400000, guid: f465f62a70812e74da7ee73c638d8092, type: 2}
+  - {fileID: 11400000, guid: 17ddead2b0c837948aa526243d44e286, type: 2}
+  - {fileID: 11400000, guid: 0624b0fc79e593d429c0abbd9e919b7d, type: 2}
+  - {fileID: 11400000, guid: 4a15f9ff0bb333541b6cb7b9fa640247, type: 2}
+  - {fileID: 11400000, guid: 80877f2ec80add94ebd481b9dc57d7d5, type: 2}
+  - {fileID: 11400000, guid: 0402c3a028991d0429b136789c4442d5, type: 2}
+  - {fileID: 11400000, guid: 684f20def671d4b41b61d9a36c1670c6, type: 2}
+  - {fileID: 11400000, guid: b1b8979ca8f56884c8bb9aa5c5ebaf09, type: 2}
   enemyTypesPerLevel:
   - {fileID: 11400000, guid: 5bb923b2c4bae414084ba20d1e140230, type: 2}
   - {fileID: 11400000, guid: 7bd1c5553a1dc87429b8c055399ed343, type: 2}
+  - {fileID: 11400000, guid: a8f54ee5a5ad6c94ea207178d058761a, type: 2}
+  - {fileID: 11400000, guid: 28bfa6d61aa003d4b865703f8e206ffa, type: 2}
+  - {fileID: 11400000, guid: 19c96b80e7d933648a045cf05694a4bb, type: 2}
+  - {fileID: 11400000, guid: c4335dc6323cc7e4f98ccee50cd885b0, type: 2}
+  - {fileID: 11400000, guid: 8eee064eb0a187b4a9ff35e8d6c7a55d, type: 2}
+  - {fileID: 11400000, guid: b88860bdb9671c749a1880322f15fd98, type: 2}
+  - {fileID: 11400000, guid: 0dfe6b135a4ddaa4f89351242328698b, type: 2}
+  - {fileID: 11400000, guid: 43f4fc226a8ed524d829952190d4221e, type: 2}
   maxEnemies: 20
   minEnemies: 10
   minEnemiesTimeMultiplier: 3

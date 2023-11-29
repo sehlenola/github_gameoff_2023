@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ff29f4b969a0f944bf52116e8c9b086, type: 3}
-  m_Name: EasyWave
+  m_Name: TypesToSpawn 8
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
   - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
   - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
   - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
-  - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
-  - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
-  - {fileID: 4646804647844795262, guid: a0ef4a67609ac8743ac4930c6d88eeec, type: 3}
+  - {fileID: 2123207907240910177, guid: 86742244d88e33649bef59ccb6a588b3, type: 3}
+  - {fileID: 2123207907240910177, guid: 86742244d88e33649bef59ccb6a588b3, type: 3}

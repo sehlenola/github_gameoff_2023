@@ -21,7 +21,10 @@ public class PendulumFireStrategy : FireStrategy
         Quaternion combinedRotation = firePoint.rotation * pendulumRotation;
 
         GameObject go = ObjectPoolManager.SpawnObject(weaponData.projectile, firePoint.position, combinedRotation, ObjectPoolManager.PoolType.Gameobject);
-
+        Projectile myProjectile = go.GetComponent<Projectile>();
+        myProjectile.SetDamage(weaponData.weaponDamage);
+        myProjectile.SetWeaponData(weaponData);
+        PlayFireSound(weaponData, firePoint);
 
         PlayFireSound(weaponData, firePoint);
     }
