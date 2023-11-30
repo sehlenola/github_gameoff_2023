@@ -7,6 +7,23 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 {
     [SerializeField] private int tripsNeeded;
     [SerializeField] private int currentTrip;
+    [SerializeField] private AudioClip winAudio;
+    [SerializeField] private AudioClip looseAudio;
+    [SerializeField] private AudioClip tripCompleteAudio;
+    [SerializeField] private AudioClip portalActivatedAudio;
+    private AudioSource audioSource;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameObject portalGameObject;
+    [SerializeField] private GameOverPanel gameOverPanel;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        portalGameObject.SetActive(false);
+        gameOverPanel.gameObject.SetActive(false);
+    }
+
+
 
 
     private void OnEnable()
@@ -22,7 +39,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         currentTrip++;
         if(currentTrip >= tripsNeeded)
         {
-            StaticEventHandler.CallGameOverEvent("Victory!", "All orbs collected!");
+            //StaticEventHandler.CallGameOverEvent("Victory!", "All orbs collected!");
+            portalGameObject.SetActive(true);
+            audioSource.PlayOneShot(portalActivatedAudio);
+            uiManager.ShowWarning("Last orb delivered! \n Get to the portal!", 27f);
+            StaticEventHandler.CallOnActivatedPortal();
+
+        }
+        else
+        {
+            HandleTripComplete();
         }
     }
 
@@ -36,14 +62,14 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     private void StaticEventHandler_OnGameOver(GameOverArgs obj)
     {
-        Debug.Log(obj.titleText);
-        Debug.Log(obj.bodyText);
+        gameOverPanel.ShowGameOverPanel(obj.titleText, obj.bodyText, FindObjectOfType<DamageTracker>().GetAllWeaponDamageAsString(), false);
+        gameOverPanel.gameObject.SetActive(true);
     }
 
     private void StaticEventHandler_OnGameWon(GameWonArgs obj)
     {
-        Debug.Log(obj.titleText);
-        Debug.Log(obj.bodyText);
+        gameOverPanel.ShowGameOverPanel(obj.titleText, obj.bodyText, FindObjectOfType<DamageTracker>().GetAllWeaponDamageAsString(), true);
+        gameOverPanel.gameObject.SetActive(true);
     }
     private void StaticEventHandler_OnLevelUp(LevelUpArgs obj)
     {
@@ -57,5 +83,12 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     public int GetTripsNeeded()
     {
         return tripsNeeded;
+    }
+
+
+    private void HandleTripComplete()
+    {
+        audioSource.PlayOneShot(tripCompleteAudio);
+        uiManager.ShowWarning("Orb delivered \n Enemy Activity Increased!", 7f);
     }
 }

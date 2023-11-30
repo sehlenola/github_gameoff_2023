@@ -22,6 +22,7 @@ public class AreaFireStrategySO : FireStrategy
                 {
                     damageable.TakeDamage(weaponData.weaponDamage);
                     SpawnDamageNumber(hitCollider.transform.position);
+                    StaticEventHandler.CallOnDamageDealt(weaponData, weaponData.weaponDamage);
 
                 }
             }

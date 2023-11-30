@@ -66,6 +66,7 @@ public class Projectile : MonoBehaviour
             {
                 damageable.TakeDamage(projectileDamage);
                 SpawnDamageNumber(other.transform.position);
+                StaticEventHandler.CallOnDamageDealt(weaponData, projectileDamage);
 
             }
 

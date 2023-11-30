@@ -30,7 +30,7 @@ public class ForwardFireStrategyAoe : FireStrategy
             myProjectile.SetWeaponData(weaponData);
             myProjectile.SetDamage(weaponData.weaponDamage);
 
-            PlayFireSound(weaponData, firePoint);
+            PlayFireSound(weaponData, firePoint,1f);
 
         }
     }

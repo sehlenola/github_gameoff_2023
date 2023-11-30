@@ -12,6 +12,8 @@ public static class StaticEventHandler
     public static event Action<EnemyKilledArgs> OnEnemyKilled;
     public static event Action<EnemySpawnedArgs> OnEnemySpawned;
     public static event Action<ExperiencePickupArgs> OnExperiencePickup;
+    public static event Action<PortalActivatedArgs> OnPortalActivated;
+    public static event Action<DamageEventArgs> OnDamageDealt;
 
     public static void CallGameOverEvent(string title, string body)
     {
@@ -53,7 +55,15 @@ public static class StaticEventHandler
     {
         OnExperiencePickup?.Invoke(new ExperiencePickupArgs() { currentExperience = currentExp, maxExperience = maxExp });
     }
+    public static void CallOnActivatedPortal()
+    {
+        OnPortalActivated?.Invoke(new PortalActivatedArgs() {});
+    }
 
+    public static void CallOnDamageDealt(WeaponData weaponData, float damageAmount)
+    {
+        OnDamageDealt?.Invoke(new DamageEventArgs() { DamageAmount = damageAmount, WeaponData = weaponData});
+    }
 
 }
 
@@ -102,5 +112,15 @@ public class ExperiencePickupArgs : EventArgs
 {
     public int currentExperience;
     public int maxExperience;
+}
+public class PortalActivatedArgs : EventArgs
+{
+
+}
+
+public class DamageEventArgs : EventArgs
+{
+    public WeaponData WeaponData;
+    public float DamageAmount;
 }
 

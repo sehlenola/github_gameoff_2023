@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7cf4b554a375b4db6868819eae4b09, type: 3}
   m_Name: TailGunnerSO
   m_EditorClassIdentifier: 
-  weaponName: TailGunner
-  weaponDescription: Accurate, quick firing forward machine gun
+  weaponName: Tail gunner
+  weaponDescription: Fires projectiles in a pendulum motion behind the aircraft.
+    Good for taking out smaller enemies but lack punch and accuracy
   fireStrategy: {fileID: 11400000, guid: 0b3895fb7ea5c0540a8b4d6d63f33ffc, type: 2}
   weaponCooldown: 0.5
   weaponDamage: 1
@@ -22,7 +23,7 @@ MonoBehaviour:
   areaMultiplier: 0
   projectile: {fileID: 813109992470189509, guid: cedf2bc420d11e2459287921777db4a7,
     type: 3}
-  weaponSprite: {fileID: 21300000, guid: ed64f3a17f2ede646be21ed6edc9161a, type: 3}
+  weaponSprite: {fileID: 21300000, guid: e3b0b2030bb4fbc4c8fc40eca07aecdc, type: 3}
   fireSounds:
   - {fileID: 8300000, guid: 62452231c45426745ac13e5b67e14d1d, type: 3}
   - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}

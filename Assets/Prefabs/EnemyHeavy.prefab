@@ -848,6 +848,12 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 101569146474229398, guid: a0ef4a67609ac8743ac4930c6d88eeec,
+        type: 3}
+      propertyPath: experiencePickupPrefab
+      value: 
+      objectReference: {fileID: 1090676150205671737, guid: 37f914c8e179b7746baf8c969e38f5cd,
+        type: 3}
     - target: {fileID: 940956546122179222, guid: a0ef4a67609ac8743ac4930c6d88eeec,
         type: 3}
       propertyPath: m_LocalPosition.y

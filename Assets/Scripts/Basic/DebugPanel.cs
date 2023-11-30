@@ -6,19 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class DebugPanel : MonoBehaviour
 {
-    private void OnEnable()
-    {
-        StaticEventHandler.OnGameWon += StaticEventHandler_OnGameWon;
-    }
-    private void OnDisable()
-    {
-        StaticEventHandler.OnGameWon -= StaticEventHandler_OnGameWon;
-    }
-
-    private void StaticEventHandler_OnGameWon(GameWonArgs obj)
-    {
-        throw new NotImplementedException();
-    }
 
     public void LevelUp()
     {

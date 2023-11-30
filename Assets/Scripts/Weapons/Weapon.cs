@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
     private WeaponData weaponDataInstance;
     private float currentCooldown;
     [SerializeField] private int currentWeaponLevel;
-    [SerializeField] private int maxWeaponLevel = 10;
+    [SerializeField] private int maxWeaponLevel = 100;
 
 
     public void SetupWeapon(WeaponData wd)

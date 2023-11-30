@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ShotgunSO
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  weaponDescription: Fires multiple projectiles in a cone shape
+  weaponDescription: Powerful close range weapon. Can take out small swarms or single
+    big targets.
   fireStrategy: {fileID: 11400000, guid: c5cdc9bf4e8b72f42b48391b26af13b3, type: 2}
   weaponCooldown: 3.2
   weaponDamage: 3
@@ -27,5 +28,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fb57a790f9bfcd4bb5c63eb88f536c9, type: 3}
   - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}
   weaponUpgrades:
-  - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}
   - {fileID: 11400000, guid: 8ef8f115ef822554d9db66ae44c73aaa, type: 2}
+  - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}

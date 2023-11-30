@@ -20,6 +20,7 @@ public class Explosion : MonoBehaviour
                 {
                     damageable.TakeDamage(weaponData.weaponDamage);
                     SpawnDamageNumber(hitCollider.transform.position);
+                    StaticEventHandler.CallOnDamageDealt(weaponData, weaponData.weaponDamage);
 
                 }
             }

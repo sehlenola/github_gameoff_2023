@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Mono.CompilerServices.SymbolWriter;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -63,13 +62,13 @@ public class EnemySpawner : MonoBehaviour
     private void StaticEventHandler_OnEnemyKilled(EnemyKilledArgs obj)
     {
         activeEnemies--;
-        Debug.Log("Active Enemies: " + activeEnemies);
+        //Debug.Log("Active Enemies: " + activeEnemies);
     }
 
     private void StaticEventHandler_OnEnemySpawned(EnemySpawnedArgs obj)
     {
         activeEnemies++;
-        Debug.Log("Active Enemies: " + activeEnemies);
+        //Debug.Log("Active Enemies: " + activeEnemies);
     }
 
 

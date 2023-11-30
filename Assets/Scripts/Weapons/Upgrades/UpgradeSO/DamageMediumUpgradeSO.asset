@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DamageMediumUpgradeSO
   m_EditorClassIdentifier: 
   upgradeName: Medium <color="blue">damage bonus
-  upgradeSprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  upgradeSprite: {fileID: 21300000, guid: 7d67a8662c749a34aa6e931fd08d79e5, type: 3}
   additionalDamage: 2

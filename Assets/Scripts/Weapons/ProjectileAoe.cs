@@ -74,6 +74,7 @@ public class ProjectileAoe : MonoBehaviour
                 //SpawnDamageNumber(other.transform.position);
                 ExplodeVisuals();
                 ExplodeDamage(weaponData);
+                //StaticEventHandler.CallOnDamageDealt(weaponData, projectileDamage);
 
             }
 
@@ -119,6 +120,7 @@ public class ProjectileAoe : MonoBehaviour
                 {
                     damageable.TakeDamage(weaponData.weaponDamage);
                     SpawnDamageNumber(hitCollider.transform.position);
+                    StaticEventHandler.CallOnDamageDealt(weaponData, weaponData.weaponDamage);
 
                 }
             }

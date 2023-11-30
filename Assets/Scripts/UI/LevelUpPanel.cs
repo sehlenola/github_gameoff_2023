@@ -37,6 +37,7 @@ public class LevelUpPanel : MonoBehaviour
     }
 
 
+
     private void StaticEventHandler_OnLevelUp(LevelUpArgs obj)
     {
         ShowUpgradePanels(3);

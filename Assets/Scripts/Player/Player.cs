@@ -14,16 +14,21 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip healAudio;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject playerDeathPrefab;
+    [SerializeField] private GameObject playerHealPrefab;
+    [SerializeField] private int healAmount = 2;
+    [SerializeField] private WeaponManager weaponManager;
 
 
 
     private void Start()
     {
+        weaponManager = GetComponent<WeaponManager>();
         playerController = GetComponent<PlayerController>();
         currentLevel = 1;
         audioSource = GetComponent<AudioSource>();
         StaticEventHandler.OnTripComplete += StaticEventHandler_OnTripComplete;
-        StaticEventHandler.CallOnLevelUpEvent(currentLevel);
+        //StaticEventHandler.CallOnLevelUpEvent(currentLevel);
         currentHealth = maxHealth;
         UpdateHpBar();
         StaticEventHandler.CallOnExperiencePickupEvent(currentExperience, maxExperience);
@@ -35,8 +40,8 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
 
     private void StaticEventHandler_OnTripComplete(TripCompleteArgs obj)
     {
-        HealDamage(1);
-        audioSource.PlayOneShot(healAudio);
+        HealDamage(healAmount);
+        //audioSource.PlayOneShot(healAudio);
     }
 
     private void Update()
@@ -50,6 +55,9 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
         currentHealth += amount;
         currentHealth = Mathf.Min(maxHealth, currentHealth);
         UpdateHpBar();
+        SpawnHealingNumbers();
+
+
     }
     public void TakeDamage(float amount)
     {
@@ -58,6 +66,7 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
         UpdateHpBar();
         if (currentHealth <= 0)
         {
+            Instantiate(playerDeathPrefab, transform.position, Quaternion.identity);
             StaticEventHandler.CallGameOverEvent("Game Over!", "Player died");
             Destroy(gameObject);
         }
@@ -89,6 +98,15 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
         return playerController.GetSpeed();
     }
 
+    public void PlaySoundOnPlayer(AudioClip clip, float volume = 1f)
+    {
+        audioSource.PlayOneShot(clip, volume);
+    }
+    void SpawnHealingNumbers()
+    {
+        GameObject go = ObjectPoolManager.SpawnObject(playerHealPrefab, transform.position, Quaternion.Euler(90, 0, 0), ObjectPoolManager.PoolType.ParticleSystem);
+        go.GetComponent<DamageNumber>().SetDamage(healAmount,true);
+    }
 
 }
 

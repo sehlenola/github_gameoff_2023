@@ -30,6 +30,12 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
         StaticEventHandler.OnGameWon += StaticEventHandler_OnGameWon;
         StaticEventHandler.OnGameOver += StaticEventHandler_OnGameOver;
         StaticEventHandler.OnTripComplete += StaticEventHandler_OnTripComplete;
+        StaticEventHandler.OnPortalActivated += StaticEventHandler_OnPortalActivated;
+    }
+
+    private void StaticEventHandler_OnPortalActivated(PortalActivatedArgs obj)
+    {
+        speed = 0f; retreatSpeed = 0;
     }
 
     private void StaticEventHandler_OnTripComplete(TripCompleteArgs obj)
@@ -53,7 +59,8 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
     {
         StaticEventHandler.OnGameWon -= StaticEventHandler_OnGameWon;
         StaticEventHandler.OnGameOver -= StaticEventHandler_OnGameOver;
-        StaticEventHandler.OnTripComplete += StaticEventHandler_OnTripComplete;
+        StaticEventHandler.OnTripComplete -= StaticEventHandler_OnTripComplete;
+        StaticEventHandler.OnPortalActivated -= StaticEventHandler_OnPortalActivated;
     }
 
     void Start()

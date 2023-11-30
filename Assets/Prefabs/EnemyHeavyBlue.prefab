@@ -23,6 +23,12 @@ PrefabInstance:
       propertyPath: defaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 150a0076481d0384180b556b618f468c, type: 2}
+    - target: {fileID: 1103965610067138709, guid: 14e54af3ff4e9e04c8cd96a839aca41a,
+        type: 3}
+      propertyPath: experiencePickupPrefab
+      value: 
+      objectReference: {fileID: 1090676150205671737, guid: 37f914c8e179b7746baf8c969e38f5cd,
+        type: 3}
     - target: {fileID: 4117247289246457879, guid: 14e54af3ff4e9e04c8cd96a839aca41a,
         type: 3}
       propertyPath: m_IsActive

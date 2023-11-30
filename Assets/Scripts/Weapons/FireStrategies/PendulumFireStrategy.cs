@@ -24,8 +24,8 @@ public class PendulumFireStrategy : FireStrategy
         Projectile myProjectile = go.GetComponent<Projectile>();
         myProjectile.SetDamage(weaponData.weaponDamage);
         myProjectile.SetWeaponData(weaponData);
-        PlayFireSound(weaponData, firePoint);
+        PlayFireSound(weaponData, firePoint,1f);
 
-        PlayFireSound(weaponData, firePoint);
+        PlayFireSound(weaponData, firePoint,1f);
     }
 }

@@ -38,8 +38,15 @@ public class DamageNumber : MonoBehaviour
         ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
-    public void SetDamage(float damage)
+    public void SetDamage(float damage, bool heal = false)
     {
-        damageText.text = damage.ToString();
+        if (!heal)
+        {
+            damageText.text = damage.ToString();
+        }
+        else
+        {
+            damageText.text = "+" + damage.ToString() + " HP";
+        }
     }
 }

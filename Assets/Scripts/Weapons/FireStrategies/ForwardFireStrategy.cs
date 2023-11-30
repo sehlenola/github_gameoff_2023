@@ -29,7 +29,7 @@ public class ForwardFireStrategy : FireStrategy
             Projectile myProjectile = go.GetComponent<Projectile>();
             myProjectile.SetDamage(weaponData.weaponDamage);
             myProjectile.SetWeaponData(weaponData);
-            PlayFireSound(weaponData, firePoint);
+            PlayFireSound(weaponData, firePoint, 1f);
 
         }
     }

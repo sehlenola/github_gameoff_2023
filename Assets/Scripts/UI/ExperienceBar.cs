@@ -15,6 +15,12 @@ public class ExperienceBar : MonoBehaviour
         StaticEventHandler.OnLevelUp += StaticEventHandler_OnLevelUp;
     }
 
+    private void OnDisable()
+    {
+        StaticEventHandler.OnExperiencePickup -= StaticEventHandler_OnExperiencePickup;
+        StaticEventHandler.OnLevelUp -= StaticEventHandler_OnLevelUp;
+    }
+
     private void StaticEventHandler_OnExperiencePickup(ExperiencePickupArgs obj)
     {
         experienceBarImage.fillAmount = (float)obj.currentExperience / obj.maxExperience;
