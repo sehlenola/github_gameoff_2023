@@ -518,7 +518,7 @@ MonoBehaviour:
   speed: 2.1
   maxHealth: 8
   currentHealth: 0
-  experiencePickupPrefab: {fileID: 7771071103508273695, guid: e46e9687185f59b44b37b0d1eaf5532e,
+  experiencePickupPrefab: {fileID: 1090676150205671737, guid: 37f914c8e179b7746baf8c969e38f5cd,
     type: 3}
   visualLeft: {fileID: 3970394617060873748}
   visualRight: {fileID: 4646804649306775397}

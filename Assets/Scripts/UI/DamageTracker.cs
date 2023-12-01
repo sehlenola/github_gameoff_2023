@@ -51,6 +51,7 @@ public class DamageTracker : MonoBehaviour
         {
             string formattedDamage = pair.Value.ToString("N0", System.Globalization.CultureInfo.InvariantCulture).Replace(",", " ");
             result += $"{pair.Key}: {formattedDamage} damage\n";
+            PersistentDataManager.Instance.SaveWeaponDamageStatistics(result);
         }
         return result;
     }

@@ -56,7 +56,8 @@ public class LevelUpPanel : MonoBehaviour
             UpgradePanelSingle upgradePanelSingle = Instantiate(upgradePanelPrefab, upgradePanelHolder.transform).GetComponent<UpgradePanelSingle>();
             WeaponManager wm = FindObjectOfType<WeaponManager>();
             bool isUpgrade = wm.AlreadyHaveWeapon(weaponData);
-            upgradePanelSingle.SetupUpgradePanel(weaponData, isUpgrade);
+            int weaponLevel = wm.GetWeaponLevel(weaponData);
+            upgradePanelSingle.SetupUpgradePanel(weaponData, isUpgrade, weaponLevel);
             //upgradePanelSingle.ShowPanel();
         }
     }

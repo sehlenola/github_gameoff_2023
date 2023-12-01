@@ -41,13 +41,13 @@ public class UpgradePanelSingle : MonoBehaviour
     }
 
 
-    public void SetupUpgradePanel(WeaponData wd, bool isUpgrade)
+    public void SetupUpgradePanel(WeaponData wd, bool isUpgrade, int weaponLevel)
     {
         weaponData = wd;
         newOrUpgradeText.text = "NEW";
         if (isUpgrade)
         {
-            newOrUpgradeText.text = "UPGRADE!";
+            newOrUpgradeText.text = "Level: " + weaponLevel;
             weaponNameText.text = weaponData.weaponName;
             string weaponUpgradeText = "Upgrades: \n";
             foreach (WeaponUpgrade upgrade in weaponData.weaponUpgrades)

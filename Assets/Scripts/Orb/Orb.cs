@@ -20,7 +20,9 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
     public float currentHealth = 100f;
     [SerializeField] float orbCarrierRadius = 1f;
     [SerializeField] private GameObject orbCarrierPrefab;
+    [SerializeField] private AudioClip orbCarrierDeathClip;
     private List<GameObject> orbCarriers = new List<GameObject>();
+    private AudioSource audioSource;
 
     private float startTime;
 
@@ -65,7 +67,7 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         SpawnOrbCarriers();
         startTime = Time.time;
@@ -127,6 +129,7 @@ public class Orb : SingletonMonobehaviour<Orb>, ITakeDamage
         {
             if (orbCarriers.Count > 0)
             {
+                audioSource.Play();
                 GameObject indicatorToDestroy = orbCarriers[orbCarriers.Count - 1];
                 orbCarriers.RemoveAt(orbCarriers.Count - 1);
                 Destroy(indicatorToDestroy);

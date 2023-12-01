@@ -16,11 +16,11 @@ public class GameOverPanel : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void ShowGameOverPanel(string title, string description, string stat, bool won)

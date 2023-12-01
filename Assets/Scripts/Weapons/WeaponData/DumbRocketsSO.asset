@@ -31,3 +31,4 @@ MonoBehaviour:
   weaponUpgrades:
   - {fileID: 11400000, guid: 999b71c3746cd96449dc630d3f9c3044, type: 2}
   - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}
+  weaponLevel: 1

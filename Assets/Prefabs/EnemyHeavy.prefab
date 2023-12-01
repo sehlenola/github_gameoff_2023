@@ -852,7 +852,7 @@ PrefabInstance:
         type: 3}
       propertyPath: experiencePickupPrefab
       value: 
-      objectReference: {fileID: 1090676150205671737, guid: 37f914c8e179b7746baf8c969e38f5cd,
+      objectReference: {fileID: 3817402409263472595, guid: 6045df80a9e7e4247abae587e48ce9d2,
         type: 3}
     - target: {fileID: 940956546122179222, guid: a0ef4a67609ac8743ac4930c6d88eeec,
         type: 3}

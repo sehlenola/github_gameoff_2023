@@ -15,4 +15,5 @@ public class WeaponData : ScriptableObject
     public Sprite weaponSprite;
     public AudioClip[] fireSounds;
     public WeaponUpgrade[] weaponUpgrades;
+    public int weaponLevel;
 }

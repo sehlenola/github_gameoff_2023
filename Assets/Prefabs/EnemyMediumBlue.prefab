@@ -88,6 +88,12 @@ PrefabInstance:
       propertyPath: defaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 150a0076481d0384180b556b618f468c, type: 2}
+    - target: {fileID: 6657229524158455945, guid: 86742244d88e33649bef59ccb6a588b3,
+        type: 3}
+      propertyPath: experiencePickupPrefab
+      value: 
+      objectReference: {fileID: 7771071103508273695, guid: e46e9687185f59b44b37b0d1eaf5532e,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

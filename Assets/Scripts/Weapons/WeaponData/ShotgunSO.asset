@@ -25,8 +25,10 @@ MonoBehaviour:
     type: 3}
   weaponSprite: {fileID: 21300000, guid: 8a201288476d6c74ea620f66245fa5ad, type: 3}
   fireSounds:
-  - {fileID: 8300000, guid: c8e7e8430b2936c4bbf5a0a6d55602de, type: 3}
-  - {fileID: 8300000, guid: 67c55217d599d99439f2fc3af421f5c8, type: 3}
+  - {fileID: 8300000, guid: bdb8de0b315cf9a4b89c87a91e459909, type: 3}
+  - {fileID: 8300000, guid: 961ed7514d39f9d43ae1c6cc85a67251, type: 3}
+  - {fileID: 8300000, guid: ed7e0522a580bbe469180cfa3be313c5, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 8ef8f115ef822554d9db66ae44c73aaa, type: 2}
   - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}
+  weaponLevel: 1

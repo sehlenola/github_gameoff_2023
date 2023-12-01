@@ -39,6 +39,7 @@ public class Weapon : MonoBehaviour
     {
         if (currentWeaponLevel >= maxWeaponLevel) { return; }
         currentWeaponLevel++;
+        weaponDataInstance.weaponLevel++;
         foreach(WeaponUpgrade u in weaponDataInstance.weaponUpgrades)
         {
             ApplyUpgrade(u);
@@ -47,6 +48,10 @@ public class Weapon : MonoBehaviour
     public void ApplyUpgrade(WeaponUpgrade upgrade)
     {
         upgrade.ApplyUpgrade(this);
+    }
+    public int GetCurrentWeaponLevel()
+    {
+        return weaponDataInstance.weaponLevel;
     }
 
     void OnDrawGizmos()

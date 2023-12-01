@@ -71,4 +71,17 @@ public class WeaponManager : MonoBehaviour
             return false;
         }
     }
+
+    public int GetWeaponLevel(WeaponData wd)
+    {
+        Weapon existingWeapon = weaponHolder.GetComponents<Weapon>().FirstOrDefault(w => w.weaponData == wd);
+        if (existingWeapon != null)
+        {
+            return existingWeapon.GetCurrentWeaponLevel();
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }
