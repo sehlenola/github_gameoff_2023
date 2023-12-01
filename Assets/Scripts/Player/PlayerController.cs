@@ -18,15 +18,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationRate = 10f;
     [SerializeField] private float rotationSpeed = 200f;
     private bool isActive = true;
+    [SerializeField] private AudioClip engineClip;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float pitch;
 
 
 
     private void Awake()
     {
+
         playerInput = GetComponent<PlayerInput>();
         weaponManager = GetComponent<WeaponManager>();
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+        audioSource.clip = engineClip;
+        audioSource.Play();
+
     }
     private void OnEnable()
     {
@@ -47,19 +54,28 @@ public class PlayerController : MonoBehaviour
     {
         if (!isActive) { return; }
         HandleMovement();
+        HandleSound();
 
+    }
+
+    private void HandleSound()
+    {
+        float enginePitch = Mathf.Lerp(pitch, pitch * 2, (moveSpeed - minSpeed) / (maxSpeed - minSpeed));
+        audioSource.pitch = enginePitch;
     }
 
     private void StaticEventHandler_OnGameWon(GameWonArgs obj)
     {
         isActive = false;
         weaponManager.isActive = false;
+        audioSource.Stop();
     }
 
     private void StaticEventHandler_OnGameOver(GameOverArgs obj)
     {
         isActive = false;
         weaponManager.isActive = false;
+        audioSource.Stop();
     }
 
     private void HandleMovement()
