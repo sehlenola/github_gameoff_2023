@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3763627575381407502
 MonoBehaviour:
@@ -47,13 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tripsNeeded: 10
   currentTrip: 0
-  winAudio: {fileID: 0}
-  looseAudio: {fileID: 0}
-  tripCompleteAudio: {fileID: 0}
+  winAudio: {fileID: 8300000, guid: a8b2b04dac3160a43ac8e67aba9353fa, type: 3}
+  looseAudio: {fileID: 8300000, guid: d00814708e2f231469510a523efbdd6a, type: 3}
+  tripCompleteAudio: {fileID: 8300000, guid: 6e085e818f4f68d44a01ff39e307ed4c, type: 3}
   portalActivatedAudio: {fileID: 8300000, guid: a8b2b04dac3160a43ac8e67aba9353fa,
     type: 3}
   uiManager: {fileID: 0}
   portalGameObject: {fileID: 0}
+  gameOverPanel: {fileID: 0}
 --- !u!82 &-6579762206492824118
 AudioSource:
   m_ObjectHideFlags: 0

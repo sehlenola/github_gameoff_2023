@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: TailGunnerSO
   m_EditorClassIdentifier: 
   weaponName: Tail gunner
-  weaponDescription: Fires projectiles in a pendulum motion behind the aircraft.
-    Good for taking out smaller enemies but lack punch and accuracy
+  weaponDescription: Continous fire in an arc behind the aircraft. While it is cool
+    to shoot enemies without looking, you have to return to collect the experience.
   fireStrategy: {fileID: 11400000, guid: 0b3895fb7ea5c0540a8b4d6d63f33ffc, type: 2}
-  weaponCooldown: 0.5
-  weaponDamage: 1
+  weaponCooldown: 0.7
+  weaponDamage: 2
   pelletCount: 1
   areaOfEffect: 0
   areaMultiplier: 0
@@ -27,6 +27,8 @@ MonoBehaviour:
   fireSounds:
   - {fileID: 8300000, guid: 62452231c45426745ac13e5b67e14d1d, type: 3}
   - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}
+  - {fileID: 8300000, guid: 2fb57a790f9bfcd4bb5c63eb88f536c9, type: 3}
+  - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 999b71c3746cd96449dc630d3f9c3044, type: 2}
-  - {fileID: 11400000, guid: a3deb91c5b260424ba08b1f210ffda32, type: 2}
+  - {fileID: 11400000, guid: 573d12e1f67bacc408afe00a1ec28c3f, type: 2}

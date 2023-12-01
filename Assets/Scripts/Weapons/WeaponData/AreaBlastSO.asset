@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AreaBlastSO
   m_EditorClassIdentifier: 
   weaponName: Area Blast
-  weaponDescription: Damages enemies close to the aircraft. Starts weak but scales
-    to take down even stronger foes.
+  weaponDescription: Damages enemies close to the aircraft. Starts weak but makes
+    it easy to pickup experience and scales to take down even stronger foes.
   fireStrategy: {fileID: 11400000, guid: ca11705d3dd4ef74f8586a4aa1c95496, type: 2}
   weaponCooldown: 1.2
   weaponDamage: 1
@@ -23,7 +23,9 @@ MonoBehaviour:
   areaMultiplier: 1
   projectile: {fileID: 0}
   weaponSprite: {fileID: 21300000, guid: 3464193f906e18445807bda33a715c5a, type: 3}
-  fireSounds: []
+  fireSounds:
+  - {fileID: 8300000, guid: 86e58ec5f27142345ab4d56f50a9e50b, type: 3}
+  - {fileID: 8300000, guid: b2d28949e7c4b114393102ba3b8449a0, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 999b71c3746cd96449dc630d3f9c3044, type: 2}
   - {fileID: 11400000, guid: 2b6afc02183a8f047ba60ceb24a53dbf, type: 2}

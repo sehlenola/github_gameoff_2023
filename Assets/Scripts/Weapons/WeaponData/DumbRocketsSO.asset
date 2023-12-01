@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: DumbRocketsSO
   m_EditorClassIdentifier: 
   weaponName: Mini rockets
-  weaponDescription: Fires a random spread of dumb rockets
+  weaponDescription: Fires a spread of unguided rockets. Low damage but the long
+    range makes up for it. Some of the rockets fired from this weapon are sure to
+    hit.
   fireStrategy: {fileID: 11400000, guid: 83be81b771a9edb478b1333185cfbf01, type: 2}
-  weaponCooldown: 2
+  weaponCooldown: 2.5
   weaponDamage: 1
   pelletCount: 2
   areaOfEffect: 1
@@ -24,7 +26,8 @@ MonoBehaviour:
     type: 3}
   weaponSprite: {fileID: 21300000, guid: e08b25e654698d64894fa6a4a185c225, type: 3}
   fireSounds:
-  - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}
+  - {fileID: 8300000, guid: 731541489ed23f6418dc6924bf4a585f, type: 3}
+  - {fileID: 8300000, guid: 853d9dc10e4565340a8d644b98341ab6, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 999b71c3746cd96449dc630d3f9c3044, type: 2}
   - {fileID: 11400000, guid: 8130d0cea338487448c470a3aba77007, type: 2}

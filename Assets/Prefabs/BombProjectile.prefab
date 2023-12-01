@@ -146,6 +146,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  explosionClip:
+  - {fileID: 8300000, guid: b2d28949e7c4b114393102ba3b8449a0, type: 3}
+  - {fileID: 8300000, guid: 86e58ec5f27142345ab4d56f50a9e50b, type: 3}
 --- !u!114 &3956383686325421794
 MonoBehaviour:
   m_ObjectHideFlags: 0

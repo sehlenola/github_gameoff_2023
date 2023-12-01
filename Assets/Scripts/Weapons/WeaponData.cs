@@ -15,5 +15,4 @@ public class WeaponData : ScriptableObject
     public Sprite weaponSprite;
     public AudioClip[] fireSounds;
     public WeaponUpgrade[] weaponUpgrades;
-    // Add more properties as needed (e.g., damage, fire rate, etc.)
 }

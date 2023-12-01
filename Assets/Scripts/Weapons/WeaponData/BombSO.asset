@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7cf4b554a375b4db6868819eae4b09, type: 3}
   m_Name: BombSO
   m_EditorClassIdentifier: 
-  weaponName: Bomb
-  weaponDescription: While difficult to hit, the scaling makes this weapon deadly
-    in the hands of a true ace.
+  weaponName: Heavy Bomb
+  weaponDescription: Drops a bomb that does explosive damage. While difficult to
+    hit it, good positioning will make short work of any enemy.
   fireStrategy: {fileID: 11400000, guid: 49ffde8cdd558d24b920982041c13f8b, type: 2}
   weaponCooldown: 3
   weaponDamage: 3
@@ -25,7 +25,7 @@ MonoBehaviour:
     type: 3}
   weaponSprite: {fileID: 21300000, guid: 2864d3e45225438479cb9cdc13592d52, type: 3}
   fireSounds:
-  - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}
+  - {fileID: 8300000, guid: 5f811409a60f84b43ba7112482c4636c, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 8f25aa7857dba6a4b8739950c41f9e1f, type: 2}
   - {fileID: 11400000, guid: 2b6afc02183a8f047ba60ceb24a53dbf, type: 2}

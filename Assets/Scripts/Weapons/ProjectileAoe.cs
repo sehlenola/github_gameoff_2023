@@ -13,6 +13,7 @@ public class ProjectileAoe : MonoBehaviour
     [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private WeaponData weaponData;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private AudioClip[] explosionClip;
 
     private Coroutine _returnToPoolTimerCoroutine;
 
@@ -79,6 +80,7 @@ public class ProjectileAoe : MonoBehaviour
             }
 
             // Destroy or deactivate the projectile
+            
             ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
@@ -101,6 +103,7 @@ public class ProjectileAoe : MonoBehaviour
     private void ExplodeVisuals()
     {
         // Instantiate and scale AOE visual effect
+        Player.Instance.PlaySoundOnPlayer(explosionClip[Random.Range(0, explosionClip.Length)], 1f);
         GameObject aoeEffect = ObjectPoolManager.SpawnObject(aoeEffectPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
         aoeEffect.transform.localScale = new Vector3(weaponData.areaOfEffect * weaponData.areaMultiplier, aoeEffect.transform.localScale.y, weaponData.areaOfEffect * weaponData.areaMultiplier);
     }

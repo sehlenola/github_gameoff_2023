@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec007e7848b1e444a411325a1d2fa98, type: 3}
   m_Name: ShotgunForwardFIreStrategy
   m_EditorClassIdentifier: 
-  spreadAngle: 15
+  spreadAngle: 50
   fireOffset: 0

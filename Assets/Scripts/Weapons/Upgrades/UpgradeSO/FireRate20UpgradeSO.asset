@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fce83c27892bdd4e9daab1a5b907c42, type: 3}
-  m_Name: FireRateUpgradeSO
+  m_Name: FireRate20UpgradeSO
   m_EditorClassIdentifier: 
-  upgradeName: Slightly faster <color="blue"> fire rate
+  upgradeName: Faster <color="blue"> fire rate
   upgradeSprite: {fileID: 21300000, guid: b84c510dac6e1914081f1f76842df7b1, type: 3}
-  fireRateMultiplier: 0.9
+  fireRateMultiplier: 0.75

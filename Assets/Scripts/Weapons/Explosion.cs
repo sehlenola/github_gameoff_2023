@@ -9,6 +9,7 @@ public class Explosion : MonoBehaviour
     public void Explode(WeaponData weaponData)
     {
         // Perform AOE damage logic
+        Player.Instance.PlaySoundOnPlayer(weaponData.fireSounds[Random.Range(0, weaponData.fireSounds.Length)]);
         SetDamage(weaponData.weaponDamage);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, weaponData.areaOfEffect * weaponData.areaMultiplier, enemyLayer);
         foreach (var hitCollider in hitColliders)

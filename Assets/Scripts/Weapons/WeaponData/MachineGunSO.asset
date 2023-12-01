@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MachineGunSO
   m_EditorClassIdentifier: 
   weaponName: Machine Gun
-  weaponDescription: Accurate and good scaling make this weapon reliable while boring.
+  weaponDescription: Accurate and fast fire rate. Good scaling make this weapon reliable,
+    but maybe boring.
   fireStrategy: {fileID: 11400000, guid: 225f2344cab209341be2dfbb44a84b5c, type: 2}
   weaponCooldown: 1
   weaponDamage: 2
@@ -26,6 +27,8 @@ MonoBehaviour:
   fireSounds:
   - {fileID: 8300000, guid: 62452231c45426745ac13e5b67e14d1d, type: 3}
   - {fileID: 8300000, guid: e1f407e7e4b9a9f429540627955a7878, type: 3}
+  - {fileID: 8300000, guid: 2fb57a790f9bfcd4bb5c63eb88f536c9, type: 3}
+  - {fileID: 8300000, guid: 7cf78aef0ea868448a4525af4c79564b, type: 3}
   weaponUpgrades:
   - {fileID: 11400000, guid: 8ef8f115ef822554d9db66ae44c73aaa, type: 2}
   - {fileID: 11400000, guid: a3deb91c5b260424ba08b1f210ffda32, type: 2}

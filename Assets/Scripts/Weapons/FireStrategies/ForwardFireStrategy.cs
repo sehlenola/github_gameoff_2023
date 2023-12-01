@@ -8,6 +8,7 @@ public class ForwardFireStrategy : FireStrategy
     public float fireOffset;
     public override void Fire(Transform firePoint, WeaponData weaponData)
     {
+        PlayFireSound(weaponData, firePoint, 1f);
         for (int i = 0; i < weaponData.pelletCount; i++)
         {
             // Use factory to instantiate
@@ -29,7 +30,7 @@ public class ForwardFireStrategy : FireStrategy
             Projectile myProjectile = go.GetComponent<Projectile>();
             myProjectile.SetDamage(weaponData.weaponDamage);
             myProjectile.SetWeaponData(weaponData);
-            PlayFireSound(weaponData, firePoint, 1f);
+            
 
         }
     }

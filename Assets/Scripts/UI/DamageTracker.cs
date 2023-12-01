@@ -1,18 +1,27 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageTracker : MonoBehaviour
 {
     private Dictionary<string, float> damageByWeapon = new Dictionary<string, float>();
+    private int killCount = 0;
 
     private void OnEnable()
     {
         StaticEventHandler.OnDamageDealt += StaticEventHandler_HandleDamageDealt;
+        StaticEventHandler.OnEnemyKilled += StaticEventHandler_OnEnemyKilled;
+    }
+
+    private void StaticEventHandler_OnEnemyKilled(EnemyKilledArgs obj)
+    {
+        killCount++;
     }
 
     private void OnDisable()
     {
         StaticEventHandler.OnDamageDealt -= StaticEventHandler_HandleDamageDealt;
+        StaticEventHandler.OnEnemyKilled -= StaticEventHandler_OnEnemyKilled;
     }
 
     private void StaticEventHandler_HandleDamageDealt(DamageEventArgs e)
@@ -37,13 +46,17 @@ public class DamageTracker : MonoBehaviour
 
     public string GetAllWeaponDamageAsString()
     {
-        string result = "";
+        string result = "Enemies killed: " + killCount + "\n \n";
         foreach (var pair in damageByWeapon)
         {
             string formattedDamage = pair.Value.ToString("N0", System.Globalization.CultureInfo.InvariantCulture).Replace(",", " ");
             result += $"{pair.Key}: {formattedDamage} damage\n";
         }
         return result;
+    }
+    public int GetKillCount()
+    {
+        return killCount;
     }
 
 }

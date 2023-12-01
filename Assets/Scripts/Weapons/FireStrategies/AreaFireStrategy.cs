@@ -31,6 +31,7 @@ public class AreaFireStrategySO : FireStrategy
         // Instantiate and scale AOE visual effect
         GameObject aoeEffect = ObjectPoolManager.SpawnObject(aoeEffectPrefab, firePoint.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
         aoeEffect.transform.localScale = new Vector3(weaponData.areaOfEffect * weaponData.areaMultiplier, aoeEffect.transform.localScale.y, weaponData.areaOfEffect * weaponData.areaMultiplier);
+        PlayFireSound(weaponData, firePoint, 0.5f);
     }
 
     void SpawnDamageNumber(Vector3 enemyPosition)
