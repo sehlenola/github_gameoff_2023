@@ -798,6 +798,7 @@ MonoBehaviour:
   hpObject: {fileID: 6027786226491438448}
   audioSource: {fileID: 0}
   healAudio: {fileID: 8300000, guid: a8b2b04dac3160a43ac8e67aba9353fa, type: 3}
+  damageAudio: {fileID: 8300000, guid: db109f44701b7154688cc4da2f710250, type: 3}
   playerController: {fileID: 0}
   playerDeathPrefab: {fileID: 8768361959805019469, guid: 18e565f36edc34547a657a1782336270,
     type: 3}

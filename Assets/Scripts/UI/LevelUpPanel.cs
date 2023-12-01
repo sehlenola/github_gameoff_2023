@@ -8,6 +8,8 @@ public class LevelUpPanel : MonoBehaviour
 {
     [SerializeField] GameObject upgradePanelHolder;
     [SerializeField] GameObject upgradePanelPrefab;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip levelupClip;
 
     [SerializeField] WeaponData[] allWeaponData;
 
@@ -46,8 +48,10 @@ public class LevelUpPanel : MonoBehaviour
     public void ShowUpgradePanels(int countToShow)
     {
         ClearUpgradePanels();
+        
         upgradePanelHolder.GetComponent<SlideInAnimation>().AnimateIn();
         gameObject.SetActive(true);
+        audioSource.PlayOneShot(levelupClip);
         Time.timeScale = 0f;
         //spawn upgradePanels
         List<WeaponData> chosenWeapons = GetRandomUniqueWeapons(countToShow);

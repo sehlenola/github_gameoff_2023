@@ -13,6 +13,7 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
     [SerializeField] private GameObject hpObject;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip healAudio;
+    [SerializeField] private AudioClip damageAudio;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject playerDeathPrefab;
     [SerializeField] private GameObject playerHealPrefab;
@@ -64,6 +65,7 @@ public class Player : SingletonMonobehaviour<Player>, ITakeDamage
         // Player damage logic
         currentHealth -= (int)amount;
         UpdateHpBar();
+        audioSource.PlayOneShot(damageAudio);
         if (currentHealth <= 0)
         {
             Instantiate(playerDeathPrefab, transform.position, Quaternion.identity);
